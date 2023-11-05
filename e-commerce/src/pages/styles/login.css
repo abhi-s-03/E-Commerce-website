@@ -28,6 +28,10 @@
     background-color: #fff;
 }
 
+.login .right img{
+    margin-bottom: .7rem;
+}
+
 .login form {
     display: flex;
     flex-direction: column;
