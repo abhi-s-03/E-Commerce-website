@@ -43,6 +43,7 @@ function LoginForm() {
         <img src="../assets/login.jpg"></img>
       </div>
       <div className="right">
+        <img src="../assets/loginlogo.jpg"></img>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
