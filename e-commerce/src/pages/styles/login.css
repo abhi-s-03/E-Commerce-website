@@ -12,10 +12,8 @@
 .login .left {
     width: 60%;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #007bff;
 }
 
 .login .right {
@@ -50,17 +48,26 @@
 }
 
 .login button {
-    padding: 1rem 2rem;
+    padding: .7rem 2rem;
     border: none;
     cursor: pointer;
-    background-color: #007bff;
     color: #fff;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin: 1rem 0;
+    border-radius: 10px;
+    width:70%;
+}
+
+.login button[type="submit"]{
+    background-color: #007bff;
+}
+
+.login button{
+    background-color: red;
 }
 
 .login .line-container {
-    width: 100%;
+    width: 60%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -96,6 +103,11 @@
 
 .login form .forgot-password a {
     color: #007bff;
+}
+
+.login a{
+    text-decoration: none;
+    color: #3390f3;
 }
 
 /* Responsive Styles */
