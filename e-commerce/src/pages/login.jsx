@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./styles/login.css";
 import auth from "../auth/auth";
+import { signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 
 function LoginForm() {
@@ -16,7 +17,7 @@ function LoginForm() {
     }
 
     try {
-      await auth().signInWithEmailAndPassword(email, password);
+      await signInWithEmailAndPassword(auth,email, password);
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -24,21 +25,11 @@ function LoginForm() {
     }
   };
 
-  const handleGoogleSignIn = async () => {
+  const handleGoogleSignIn = async (e) => {
+    e.preventDefault();
     try {
-      const provider = new auth.GoogleAuthProvider();
-      await auth().signInWithPopup(provider);
-      navigate("/");
-    } catch (error) {
-      console.error(error);
-      alert("An error occurred");
-    }
-  };
-
-  const handlePhoneSignIn = async () => {
-    try {
-      const provider = new auth.PhoneAuthProvider();
-      await auth().signInWithPopup(provider);
+      const provider = new GoogleAuthProvider();
+      await signInWithPopup(auth,provider);
       navigate("/");
     } catch (error) {
       console.error(error);
@@ -48,8 +39,11 @@ function LoginForm() {
 
   return (
     <div className="login">
-      <div className="left"> </div>
+      <div className="left"> 
+        <img src="../assets/login.jpg"></img>
+      </div>
       <div className="right">
+        <img src="../assets/loginlogo.jpg"></img>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
@@ -70,9 +64,12 @@ function LoginForm() {
             <label className="or">OR</label>
             <div className="line"></div>
           </div>
-          <button onClick={handleGoogleSignIn}>Sign in with Google</button>
-          <button onClick={handlePhoneSignIn}>Sign in with Phone</button>
+          <button onClick={handleGoogleSignIn}>Sign In with Google</button>
         </form>
+        <div className="signup">
+          <label>Don&apos;t have an account?</label>
+          <a href="/signup"> Sign Up</a>
+        </div>
       </div>
     </div>
   );
