@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.signup {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    width: 100%;
+}
+
+.signup img {
+    width: 40%;
+    margin: 1.5rem 0;
+}
+
+.signup button {
+    padding: .7rem 2rem;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+    width: 50%;
+}
+
+.signup button {
+    background-color: red;
+}
+
+.signup .line-container {
+    width: 60%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .7rem;
+}
+
+.signup .or {
+    font-weight: bold;
+    margin: 0 1rem;
+
+}
+
+.signup .line {
+    width: 80%;
+    height: 1px;
+    background-color: #ccc;
+    margin: 1rem 0;
+}
+
+.signup .form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 50%;
+    box-sizing: border-box;
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+.signup input {
+    width: 50%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 0.5rem;
+}
+
+.signup form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.signup form button {
+    padding: 0.7rem 2rem;
+    border: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: bold;
+    margin: 1rem 0;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.signup form button[type="submit"] {
+    background-color: #007bff;
+}
+
+.signup label {
+    margin: .3rem 0;
+}
+
+.signup .error {
+    color: red;
+    font-weight: bold;
+    margin: .7rem 0;
+}
+
+.signup a {
+    text-decoration: none;
+    color: #3390f3;
+}
