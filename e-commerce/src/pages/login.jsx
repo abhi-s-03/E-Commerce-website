@@ -3,6 +3,8 @@ import "./styles/login.css";
 import auth from "../auth/auth";
 import { signInWithEmailAndPassword,signInWithPopup,GoogleAuthProvider } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
+import login_img from "../assets/login.jpg";
+import login_logo from "../assets/loginlogo.jpg";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -40,10 +42,10 @@ function LoginForm() {
   return (
     <div className="login">
       <div className="left"> 
-        <img src="../assets/login.jpg"></img>
+        <img src={login_img}></img>
       </div>
       <div className="right">
-        <img src="../assets/loginlogo.jpg"></img>
+        <img src={login_logo}></img>
         <form onSubmit={handleSubmit}>
           <input
             type="email"
