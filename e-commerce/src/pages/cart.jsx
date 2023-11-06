@@ -60,69 +60,67 @@ function Cart() {
 
   return (
     <div className="cart-container">
-      <div className="header">Shopping Cart</div>
+      <div className="cart-container-header">Art Mart</div>
 
-      <div className="Product-list">
-        <div className="heading">
-          <div className="shopping-cart1">Shopping Cart</div>
+      <div className="cart-container-Product-list">
+        <div className="Product-list-heading">
+          <div className="heading-shopping-cart1">Shopping Cart</div>
         </div>
-        <div className="sub-heading">
-          <div className="products">Products</div>
-          <div className="price">Price</div>
-          <div className="quantity1">Quantity</div>
-          <div className="sub-total">Sub-Total</div>
+        <div className="Product-list-sub-heading">
+          <div className="sub-heading-products">Products</div>
+          <div className="sub-heading-price">Price</div>
+          <div className="sub-heading-quantity1">Quantity</div>
+          <div className="sub-heading-sub-total">Sub-Total</div>
         </div>
         
-        <div className="cart-items">
+        <div className="Product-list-cart-items">
           {cartItems.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <div className="cart-item1">
-                <button onClick={() => removeItem(item.id)} className="remove-button">
-                  <img className="delete-icon" alt="" src={deleteimg} />
+            <div className="cart-items-cart-item" key={item.id}>
+              <div className="cart-item-cart-item1">
+                <button onClick={() => removeItem(item.id)} className="cart-item1-remove-button">
+                  <img className="remove-button-delete-icon" alt="" src={deleteimg} />
                 </button>
 
-                <img className="item-image" src={item.image} alt={item.name} />
+                <img className="cart-item1-item-image" src={item.image} alt={item.name} />
 
-                <div className="item-name">{item.name}</div>
+                <div className="cart-item1-item-name">{item.name}</div>
               </div>
 
-              <div className="item-price">{item.price}</div>
+              <div className="cart-item-item-price">{item.price}</div>
 
                 
-              <div className="quantity">
-                <div className="button2">
-                    <button onClick={() => decreaseQuantity(item.id)}>
-                      <img className="minus-icon" alt="" src={minussymbol} />
+              <div className="cart-item-quantity">
+                <div className="quantity-button2">
+                    <button onClick={() => decreaseQuantity(item.id)} className="decrbutt">
+                      <img className="button2-minus-icon" alt="" src={minussymbol} />
                     </button>
-                    <div className="item-count">{item.quantity}</div>
-                    <button onClick={() => increaseQuantity(item.id)}>
-                      <img className="plus-icon" alt="" src={plussymbol} />
+                    <div className="button2-item-count">{item.quantity}</div>
+                    <button onClick={() => increaseQuantity(item.id)} className="incrbutt">
+                      <img className="button2-plus-icon" alt="" src={plussymbol} />
                     </button>
                 </div>
               </div>
-              <div className="item-subtotal">₹{item.price * item.quantity}.00</div>
+              <div className="cart-item-item-subtotal">₹{item.price * item.quantity}.00</div>
 
             </div>
             
           ))}
         </div>
 
-        <div className="shopping-cart-child"/>
-        <div className="return-from-cart-section">
-          <button className="return-from-cart">
-          <img className="regulararrowleft-icon" alt="" src={leftarrow} />
-            <b className="label4">  Return to Shop</b>
+        <div className="Product-list-shopping-cart-child"/>
+        <div className="Product-list-return-from-cart-section">
+          <button className="return-from-cart-section-return-from-cart">
+          <img className="return-from-cart-regulararrowleft-icon" alt="" src={leftarrow} />
+            <b className="return-from-cart-label4">  Return to Shop</b>
           </button>
         </div>  
       </div>
       
-
-
-      <div className="cart-total">
+      <div className="cart-container-cart-total">
         <div className="cart-total-heading">
-          <div className="cart-totals">Cart Totals</div>
+          <div className="heading-cart-totals">Cart Totals</div>
         </div>
-        <div className="money">
+        <div className="cart-total-money">
           <div className="sub-total-parent">
               <div className="sub-total-child">
                 <div className="subtotal-label">Sub-total</div>
