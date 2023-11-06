@@ -29,8 +29,8 @@
 }
 
 .login .right img {
-    width: 80%;
-    margin-bottom: .7rem;
+    width: 60%;
+    margin-bottom: 1rem;
 }
 
 .login .left img {
@@ -182,6 +182,6 @@
     }
 
     .login .right img {
-        width: 80%;
+        width: 60%;
     }
 }
