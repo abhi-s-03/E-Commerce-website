@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router-dom";
+//import AddToCart from "./addToCart"
+//<AddToCart userID="5fhTZZHt5tVHQXpRTgnr1DWOsd72" productID="EeJwkPzp3wCd17A0zHHq" quantity={2}/>
 
 const Landing = () => {
   const navigate=useNavigate();
