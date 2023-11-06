@@ -3,16 +3,13 @@
     padding: 0;
 }
 
-.signup html{
-    background-color: #FEFCE8;;
-}
-
 .signup {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
     width: 100%;
+    background-color: #FEFCE8;
+    height: 100vh;
 }
 
 .signup img {
