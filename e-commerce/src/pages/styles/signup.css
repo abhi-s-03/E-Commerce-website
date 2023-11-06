@@ -7,8 +7,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 1rem 0;
     width: 100%;
+    background-color: #FEFCE8;
+    height: 100vh;
 }
 
 .signup img {
@@ -62,6 +63,7 @@
     box-sizing: border-box;
     padding: 1rem;
     border: 1px solid #ccc;
+    background-color: #fff;
 }
 
 .signup input {
