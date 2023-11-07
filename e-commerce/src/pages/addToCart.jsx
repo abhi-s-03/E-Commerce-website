@@ -16,23 +16,24 @@ const app = initializeApp(firebaseConfig);
 
 const db = getFirestore(app);
 
-const AddToCart = async (props) => {
-    try {
+const AddToCart = (props) => {
+  const data = props;
+    const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
         const docRef = await addDoc(collection(db, "carts"), {
-          productID: props.productID,
-          userID: props.userID,
-          quantity: props.quantity
+          productID: data.productID,
+          userID: data.userID,
+          quantity: data.quantity
         });
       
         console.log("Document written with ID: ", docRef.id);
       } catch (e) {
         console.error("Error adding document: ", e);
       }
-    return (
-        <div>
-            {docRef}
-        </div>
-    )
+    }
+    
+    return(<div><button type="submit" onClick={handleSubmit}>Add To Cart</button></div>)
 }
 
 export default AddToCart;
