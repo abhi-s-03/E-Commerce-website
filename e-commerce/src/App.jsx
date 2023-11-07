@@ -6,25 +6,24 @@ import Landing from "./pages/landing";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
 import AddProduct from "./pages/addProduct";
-import SellerDashboard from "./pages/sellerdashboard";
+import Seller from "./pages/seller";
 import AddImage from "./pages/addImage";
 function App() {
   return (
     <>
-     <Router>
+      <Router>
         <Routes>
-         <Route path="/add" element={<AddProduct />} />
+          <Route path="/add" element={<AddProduct />} />
           <Route path="/image" element={<AddImage />} />
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
-          <Route path="/dashseller" element={<SellerDashboard />} />
+          <Route path="/seller" element={<Seller />} />
         </Routes>
       </Router>
     </>
-    
   );
 }
 

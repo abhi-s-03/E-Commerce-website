@@ -1,6 +1,6 @@
 import './ArtworkManagement.css';
 import { Link } from "react-router-dom";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import {
   getFirestore,
@@ -9,7 +9,6 @@ import {
   where,
   query,
 } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAjCBgYjLkVHH9egP-klxA95wzXNdCOln4",
@@ -22,7 +21,6 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
-const storage = getStorage(app);
 const db = getFirestore(app);
 
 function ArtworkManagement() {

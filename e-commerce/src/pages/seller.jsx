@@ -1,12 +1,12 @@
 import { useState } from "react";
-import "./styles/SellerDashboard.css";
+import "./styles/seller.css";
 import ArtworkManagement from "./sellerdash/ArtworkManagement";
 import Orders from "./sellerdash/Orders";
 import Profile from "./sellerdash/Profile";
 import Earnings from "./sellerdash/Earnings";
 import { Link } from "react-router-dom";
 
-const SellerDashboard = () => {
+const Seller = () => {
   const [activeSection, setActiveSection] = useState("artworkManagement");
 
   const handleSectionChange = (section) => {
@@ -66,4 +66,4 @@ const SellerDashboard = () => {
   );
 };
 
-export default SellerDashboard;
+export default Seller;

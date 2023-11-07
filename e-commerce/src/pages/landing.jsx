@@ -1,7 +1,6 @@
 import Navbar from "../components/navbar";
 import Offers from "../components/offers";
 import Product from "../components/product";
-import AddToCart from "../components/addToCart";
 import painting1 from "../assets/painting1.jpeg";
 import painting2 from "../assets/painting2.jpeg";
 import painting3 from "../assets/painting3.jpeg";
