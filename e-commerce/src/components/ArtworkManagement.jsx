@@ -7,7 +7,8 @@ import {
   where,
   query,
   updateDoc,
-  doc
+  doc,
+  deleteDoc
 } from "firebase/firestore";
 import {db} from "../auth/auth";
 
@@ -83,8 +84,17 @@ function ArtworkManagement() {
     }
   };
 
-  const deleteArtwork = (id) => {
+  const deleteArtwork = async (id) => {
     // Implement functionality to delete an artwork
+    try {
+      // Delete the artwork data in Firestore
+      await deleteDoc(doc(db, "products", id));
+  
+      // After successfully deleting, reload the products
+      loadProducts();
+    } catch (error) {
+      console.error('Error deleting artwork:', error);
+    }
   };
 
   return (
