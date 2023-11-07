@@ -8,7 +8,7 @@ import {
 } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import loginimg from "../assets/login.jpg";
-import loginlogo from "../assets/loginlogo.jpg";
+import logo from "../assets/logo.jpg";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -50,7 +50,7 @@ function LoginForm() {
         <img src={loginimg}></img>
       </div>
       <div className="right">
-        <img src={loginlogo}></img>
+        <img src={logo}></img>
         <form onSubmit={handleSubmit}>
           <input
             type="email"

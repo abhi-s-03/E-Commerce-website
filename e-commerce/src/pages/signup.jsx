@@ -8,7 +8,7 @@ import "./styles/signup.css";
 import auth from "../auth/auth";
 import { db } from "../auth/auth";
 import { useNavigate } from "react-router-dom";
-import loginlogo from "../assets/loginlogo.jpg";
+import logo from "../assets/logo.jpg";
 import { addDoc, collection } from "firebase/firestore";
 
 function SignupForm() {
@@ -64,7 +64,7 @@ function SignupForm() {
   return (
     <div className="signup">
       <div className="form">
-        <img src={loginlogo}></img>
+        <img src={logo}></img>
         <button onClick={handleGoogleSignIn}>Sign In with Google</button>
         <div className="line-container">
           <div className="line"></div>
