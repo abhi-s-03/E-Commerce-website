@@ -6,6 +6,7 @@ import Landing from "./pages/landing";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
 import AddProduct from "./pages/addProduct";
+import SellerD from "./pages/sellerdashboard";
 import AddImage from "./pages/addImage";
 function App() {
   return (
@@ -19,9 +20,11 @@ function App() {
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
+          <Route path="/dashseller" element={<SellerD />} />
         </Routes>
       </Router>
-    </> 
+    </>
+     
   );
 }
 

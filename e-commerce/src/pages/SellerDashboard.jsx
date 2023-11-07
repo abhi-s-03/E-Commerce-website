@@ -4,6 +4,7 @@ import ArtworkManagement from './sellerdash/ArtworkManagement';
 import Orders from './sellerdash/Orders';
 import Profile from './sellerdash/Profile';
 import Earnings from './sellerdash/Earnings';
+import { Link } from "react-router-dom";
 
 const SellerDashboard = () => {
   const [activeSection, setActiveSection] = useState('artworkManagement');
@@ -16,6 +17,11 @@ const SellerDashboard = () => {
     <div className="seller-dashboard">
       <header>
         <h1>Seller Dashboard</h1>
+        <Link to="/">
+          <button onClick={() => window.location.href = '/'} className="return-button">
+            Return
+          </button>
+        </Link>
       </header>
       <div className="dashboard-content">
         <nav className="side-menu">
