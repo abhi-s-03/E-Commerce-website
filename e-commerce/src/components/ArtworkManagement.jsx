@@ -1,4 +1,4 @@
-import './ArtworkManagement.css';
+import './styles/ArtworkManagement.css';
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";

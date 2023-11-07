@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './Earnings.css';
+import './styles/Earnings.css';
 
 const Earnings = () => {
   const [earnings, setEarnings] = useState(0); // Initialize earnings as needed

@@ -1,9 +1,9 @@
 import { useState } from "react";
 import "./styles/seller.css";
-import ArtworkManagement from "./sellerdash/ArtworkManagement";
-import Orders from "./sellerdash/Orders";
-import Profile from "./sellerdash/Profile";
-import Earnings from "./sellerdash/Earnings";
+import ArtworkManagement from "../components/ArtworkManagement";
+import Orders from "../components/Orders";
+import Profile from "../components/Profile";
+import Earnings from "../components/Earnings";
 import { Link } from "react-router-dom";
 
 const Seller = () => {
