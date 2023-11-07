@@ -8,14 +8,26 @@
     border-radius: 5px;
 }
 
+.products-outer .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
 .products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-.products-outer h2 {
+.products-outer h2,
+.products-outer label {
     margin: 1rem;
+}
+
+.products-outer label {
+    cursor: pointer;
 }
 
 .product {

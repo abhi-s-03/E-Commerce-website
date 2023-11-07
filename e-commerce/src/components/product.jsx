@@ -4,7 +4,10 @@ import "./styles/product.css";
 const Product = ({ heading, products }) => {
   return (
     <div className="products-outer">
-      <h2>{heading}</h2>
+      <div className="heading">
+        <h2>{heading}</h2>
+        <Link to="/"><label>More</label></Link>
+      </div>
       <div className="products">
         {products.map((product, index) => (
           <div className="product" key={index}>
