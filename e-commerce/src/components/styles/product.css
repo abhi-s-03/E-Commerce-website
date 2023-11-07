@@ -71,6 +71,7 @@
 @media (max-width: 767px) {
     .product {
         width: calc(33.3% - 20px);
+        height: 200px;
     }
 
     .product:nth-last-child(1) {

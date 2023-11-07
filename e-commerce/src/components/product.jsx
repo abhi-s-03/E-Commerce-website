@@ -6,7 +6,9 @@ const Product = ({ heading, products }) => {
     <div className="products-outer">
       <div className="heading">
         <h2>{heading}</h2>
-        <Link to="/"><label>More</label></Link>
+        <Link to="/">
+          <label>More</label>
+        </Link>
       </div>
       <div className="products">
         {products.map((product, index) => (

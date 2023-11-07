@@ -79,7 +79,7 @@ const sculpture = [
   },
 ];
 
-const digiart=[
+const digiart = [
   {
     link: "/",
     image: digi1,
@@ -104,10 +104,10 @@ const digiart=[
     link: "/",
     image: digi5,
     title: "Product 5",
-  },  
-]
+  },
+];
 
-const photo=[
+const photo = [
   {
     link: "/",
     image: photo1,
@@ -132,8 +132,8 @@ const photo=[
     link: "/",
     image: photo5,
     title: "Product 5",
-  },  
-]
+  },
+];
 
 const Landing = () => {
   return (
