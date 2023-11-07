@@ -1,0 +1,13 @@
+.offer-img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:.7rem;
+    background-color: white;
+}
+
+.offer-img img{
+    width:50%;
+    border: 1px solid #ddd;
+    margin: 1rem;
+}

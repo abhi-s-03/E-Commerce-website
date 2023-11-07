@@ -1,4 +1,167 @@
 * {
+<<<<<<< HEAD
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+}
+
+/* Header Styles */
+.header {
+  width: 100%;
+  height: 5rem;
+  background-color: #134053ff;
+  padding: 0.9375rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+.header .logo {
+  font-size: 1.5625rem;
+  font-weight: bold;
+  color: white;
+}
+
+.cart {
+  display: flex;
+  background-color: white;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4375rem 0.625rem;
+  border-radius: 0.1875rem;
+}
+
+.fa-solid {
+  color: #134053ff;
+}
+
+.cart p {
+  height: 1.375rem;
+  width: 1.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1.375rem;
+  background-color: #134053ff;
+  color: white;
+}
+
+/* Cart Items Styles */
+.cart-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.625rem 0.5rem;
+  border: 1px solid #ddd;
+  padding: 0.9375rem;
+  width: 80%;
+  max-width: 50rem;
+  border-radius: 0.3125rem;
+}
+
+.cart-item img {
+  max-width: 7.5rem;
+  max-height: 7.5rem;
+  margin-right: 0.625rem;
+}
+
+.item-details {
+  flex: 1;
+}
+
+.item-details h3 {
+  font-size: 1.125rem;
+  margin-bottom: 0.25rem;
+  /* Reduce space between product name and seller name */
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+  margin-top: 0.5rem;
+  /* Increase space between seller name and quantity */
+}
+
+.quantity button {
+  font-size: 1.125rem;
+  padding: 0.3125rem;
+  margin: 0 0.3125rem;
+}
+
+.remove-button {
+  background-color: rgb(205, 42, 42);
+  color: white;
+  border: none;
+  padding: 0.3125rem 0.625rem;
+  cursor: pointer;
+  margin-left: 0.625rem;
+}
+
+
+/* Cart Total Styles */
+.cart-total {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-radius: 0.3125rem;
+  padding: 0rem 0rem 1.25rem 0rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: 1rem;
+  width: 30%;
+}
+
+.cart-total .cart-header {
+  background-color: #31b979ff;
+  color: white;
+  font-size: 1.25rem;
+  text-align: center;
+  padding: 0.5rem;
+  width: 100%;
+  /* Take up the whole width */
+}
+
+.cart-total h3 {
+  font-size: 1.25rem;
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.subtotal,
+.shipping-charges {
+  font-size: 1.125rem;
+  margin-top: 0.3125rem;
+  margin-left: 1.25rem;
+}
+
+.checkout-button {
+  background-color: #31b979ff;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  cursor: pointer;
+  font-size: 1.25rem;
+  margin: 0.625rem auto 0;
+  /* Center the button horizontally within cart-total */
+  display: block;
+  /* Make the button a block element for centering */
+  text-align: center;
+  /* Center the button text within the block */
+}
+=======
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -376,3 +539,4 @@
 
 
   
+>>>>>>> e998806d0b16d1953943839f276bd576e4a82032
