@@ -9,7 +9,7 @@ import Checkout from "./pages/checkout";
 function App() {
   return (
     <>
-      <Router>
+     <Router>
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<LoginForm />} />
@@ -18,7 +18,7 @@ function App() {
           <Route path="/checkout" element={<Checkout />} />
         </Routes>
       </Router>
-    </>
+    </> 
   );
 }
 
