@@ -1,5 +1,5 @@
 import React from 'react';
-import './Profile.css';
+import './styles/Profile.css';
 
 const Profile = () => {
   // Implement profile edit and portfolio management functionality
