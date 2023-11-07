@@ -64,7 +64,7 @@
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
-    width: 54.72rem;
+    width: 49rem;
   }
 
   .Product-list-heading {
@@ -81,7 +81,7 @@
     line-height: 1.3rem;
     font-weight: 600;
     display: inline-block;
-    width: 51.5rem;
+    width: 46rem;
     flex-shrink: 0;
     font-size: 1.5em;
   }
@@ -97,6 +97,7 @@
     gap: 1.5rem;
     font-size: 0.75rem;
     color: #475156;
+    width: 49rem;
   }
 
   .sub-heading-price,
@@ -108,21 +109,21 @@
     text-transform: uppercase;
     font-weight: 550;
     display: inline-block;
-    width: 23.75rem;
+    width: 21rem;
     flex-shrink: 0;
   }
 
   .sub-heading-price,
   .sub-heading-quantity1,
   .sub-heading-sub-total {
-    width: 5.5rem;
+    width: 4.7rem;
   }
   .sub-heading-quantity1,
   .sub-heading-sub-total {
-    width: 10.75rem;
+    width: 9rem;
   }
   .sub-heading-sub-total {
-    width: 7rem;
+    width: 6.1rem;
   }
 
   .Product-list-cart-items {
@@ -139,7 +140,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 3.2rem;
+    gap: 2.8rem;
   }
 
   .cart-item-cart-item1{
@@ -153,13 +154,13 @@
 .cart-item1-item-image,
 .remove-button-delete-icon {
   position: relative;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.1rem;
+  height: 1.1rem;
 }
 .cart-item1-item-image{
   border-radius: 10px;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 3rem;
+  height: 3rem;
   object-fit: cover;
 }
 
@@ -167,9 +168,9 @@
   position: relative;
   line-height: 1.25rem;
   display: inline-block;
-  width: 16.7rem;
+  width: 14.7rem;
   flex-shrink: 0;
-  font-size: 1.5em;
+  font-size: 1.2em;
   margin-bottom: 1rem;
 }
   
@@ -216,7 +217,7 @@
   position: relative;
   border-top: 1px solid #e4e7e9;
   box-sizing: border-box;
-  width: 54.56rem;
+  width: 48.89rem;
   height: 0.06rem;
 }
 
@@ -255,7 +256,7 @@
   display: flex;
   position: absolute;
   top: 22.75rem;
-  left: 74.75rem;
+  left: 64.75rem;
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
@@ -263,6 +264,7 @@
   align-items: center;
   justify-content: center;
   padding: 0 0 1.5rem;
+  width: 28vw;
 }
 
 .cart-total-heading {
