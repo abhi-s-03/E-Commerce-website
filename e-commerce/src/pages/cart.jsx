@@ -49,7 +49,7 @@ function Cart() {
   };
 
   const calculateShippingCharges = () => {
-    // Implement your shipping charges calculation logic here
+    // Implement shipping charges calculation logic here
     return 10;
   };
 
@@ -111,7 +111,7 @@ function Cart() {
         <div className="Product-list-return-from-cart-section">
           <button className="return-from-cart-section-return-from-cart">
           <img className="return-from-cart-regulararrowleft-icon" alt="" src={leftarrow} />
-            <b className="return-from-cart-label4">  Return to Shop</b>
+            <b className="return-from-cart-label4">  Return to Shop</b> {/*return to landing-page button*/}
           </button>
         </div>  
       </div>
@@ -138,7 +138,7 @@ function Cart() {
           </div>
         </div> 
         <button className="checkout-button">
-        <b className="checkout-button-text">Proceed to Checkout </b>
+          <b className="checkout-button-text">Proceed to Checkout </b> {/*move to checkout page*/}
         </button>
       </div>
     </div>

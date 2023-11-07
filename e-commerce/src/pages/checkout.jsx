@@ -40,7 +40,7 @@ function Checkout() {
   };
 
   const calculateShippingCharges = () => {
-    // Implement your shipping charges calculation logic here
+    // Implement shipping charges calculation logic here
     return 10;
   };
 
@@ -57,7 +57,7 @@ function Checkout() {
   };
 
   const handlePayment = () => {
-    // Implement your payment processing logic here
+    // Implement payment processing logic here
   };
 
   return (
@@ -160,7 +160,7 @@ function Checkout() {
         <div className="return-from-checkout">
           <button className="return-from-checkout-button">
           <img className="return-from-checkout-regulararrowleft-icon" alt="" src={leftarrow} />
-            <b className="return-from-checkout-label4">  Return to Cart</b>
+            <b className="return-from-checkout-label4">  Return to Cart</b> {/*return to cart button*/}
           </button>
         </div>
       </div>
