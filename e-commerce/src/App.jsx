@@ -13,7 +13,7 @@ function App() {
     <>
      <Router>
         <Routes>
-          <Route path="/add" element={<AddProduct />} />
+         <Route path="/add" element={<AddProduct />} />
           <Route path="/image" element={<AddImage />} />
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<LoginForm />} />
@@ -24,7 +24,7 @@ function App() {
         </Routes>
       </Router>
     </>
-     
+    
   );
 }
 

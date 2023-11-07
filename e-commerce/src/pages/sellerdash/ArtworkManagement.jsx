@@ -1,31 +1,50 @@
-import React, { useState } from 'react';
 import './ArtworkManagement.css';
 import { Link } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { initializeApp } from "firebase/app";
+import {
+  getFirestore,
+  collection,
+  getDocs,
+  where,
+  query,
+} from "firebase/firestore";
+import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
-const ArtworkManagement = () => {
-  const [artworks, setArtworks] = useState([
-    {
-      id: 1,
-      title: 'Artwork 1',
-      image: 'item1.jpg',
-      description: 'Description of Artwork 1',
-      quantity: 5,
-      price: '$50',
-    },
-    {
-      id: 2,
-      title: 'Artwork 2',
-      image: 'item2.jpg',
-      description: 'Description of Artwork 2',
-      quantity: 3,
-      price: '$70',
-    },
-    // Add more artworks as needed
-  ]);
+const firebaseConfig = {
+  apiKey: "AIzaSyAjCBgYjLkVHH9egP-klxA95wzXNdCOln4",
+  authDomain: "e-commerce-website-4c47d.firebaseapp.com",
+  projectId: "e-commerce-website-4c47d",
+  storageBucket: "e-commerce-website-4c47d.appspot.com",
+  messagingSenderId: "77440245018",
+  appId: "1:77440245018:web:c370caa40a2c3259c520a3",
+  measurementId: "G-7RJGHS8P5S"
+};
 
-  const addArtwork = () => {
-    // Implement functionality to add a new artwork
-  };
+const app = initializeApp(firebaseConfig);
+const storage = getStorage(app);
+const db = getFirestore(app);
+
+function ArtworkManagement() {
+  const [artistProd, setArtistProd] = useState([]);
+
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const q = query(collection(db, "products"), where("artistID", "==", "Aaron"));
+        const snapshot = await getDocs(q);
+        const prodArray = [];
+        snapshot.forEach((doc) => {
+          prodArray.push(doc.data());
+        });
+        setArtistProd(prodArray);
+      } catch (error) {
+        console.error("ERROR is" + error);
+      }
+    };
+
+    loadProducts();
+  }, []); // Empty dependency array to run the effect only once on component mount
 
   const editArtwork = (id) => {
     // Implement functionality to edit an existing artwork
@@ -37,33 +56,30 @@ const ArtworkManagement = () => {
 
   return (
     <div className="artwork-management-container">
-      <h2>Artwork Management</h2>
+      <h2>My Artworks</h2>
       <Link to="/add">
-      <button onClick={addArtwork} className="add-artwork-button">
-        Add New Artwork
-      </button>
+        <button className="add-artwork-button">
+          Add New Artwork
+        </button>
       </Link>
-      <ul className="artwork-list">
-        {artworks.map((artwork) => (
-          <li key={artwork.id} className="artwork-card">
-            <div className="artwork-image">
-              <img src={artwork.image} alt={artwork.title} />
-            </div>
-            <div className="artwork-info">
-              <h3>{artwork.title}</h3>
-              <p>{artwork.description}</p>
-              <p>Quantity: {artwork.quantity}</p>
-              <p>Price: {artwork.price}</p>
-            </div>
+
+      <div className="product-cards">
+        {artistProd.map((art) => (
+          <div key={art.prodName} className="product-card">
+            <img src={art.image} alt={art.prodName} className="product-image" />
+            <h3 className="product-name">{art.prodName}</h3>
+            <p className="product-description">{art.prodDesc}</p>
+            <p className="product-quantity">Quantity: {art.prodQty}</p>
+            <p className="product-price">Price: ${art.prodPrice}</p>
             <div className="action-buttons">
-              <button onClick={() => editArtwork(artwork.id)}>Edit</button>
-              <button onClick={() => deleteArtwork(artwork.id)}>Delete</button>
+              <button onClick={() => editArtwork(art.id)}>Edit</button>
+              <button onClick={() => deleteArtwork(art.id)}>Delete</button>
             </div>
-          </li>
+          </div>
         ))}
-      </ul>
+      </div>
     </div>
   );
-};
+}
 
 export default ArtworkManagement;

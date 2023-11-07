@@ -1,74 +1,87 @@
+
 .artwork-management-container {
-    text-align: center;
-    margin: 20px;
-  }
-  
-  .add-artwork-button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    margin-bottom: 20px;
-    border-radius: 5px;
-  }
-  
-  .add-artwork-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .artwork-list {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .artwork-card {
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    margin: 10px;
-    width: 300px;
-    padding: 10px;
-    background-color: #fff;
-  }
-  
-  .artwork-image {
-    width: 100%; /* Ensure images take the full width of the card */
-    height: 200px; /* Set a fixed height for all images */
-    overflow: hidden; /* Crop images if they exceed the fixed height */
-  }
-  
-  .artwork-image img {
-    width: 100%; /* Ensure images take the full width of the image div */
-    height: 100%; /* Maintain aspect ratio and fill the fixed height */
-    object-fit: cover; /* Crop or stretch images to cover the fixed size */
-  }
-  
-  .artwork-info {
-    text-align: left;
-  }
-  
-  .action-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-  }
-  
-  .action-buttons button {
-    background-color: #007BFF;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .action-buttons button:hover {
-    background-color: #0056b3;
-  }
-  
+  text-align: center;
+  margin: 1.25rem;
+}
+
+.add-artwork-button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1.25rem;
+  border-radius: 0.3125rem;
+  position: absolute; 
+  top: 3.7rem; 
+  right: 0.5rem; 
+}
+
+.add-artwork-button:hover {
+  background-color: #0056b3;
+}
+
+.product-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.product-card {
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  width: 18.75rem;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 1.25rem 0.625rem;
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 18.75rem;
+  height: auto;
+}
+
+.product-name {
+  margin: 1.25rem 0;
+  font-size: 1.125rem;
+  font-weight: bold;
+}
+
+.product-description {
+  font-size: 0.875rem;
+}
+
+.product-quantity,
+.product-price {
+  font-size: 0.75rem;
+  color: #666;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.action-buttons button {
+  background-color: #007BFF;
+  color: #fff;
+  border: none;
+  padding: 0.3125rem 0.625rem;
+  font-size: 0.875rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+}
+
+.action-buttons button:hover {
+  background-color: #0056b3;
+}
