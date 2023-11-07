@@ -130,8 +130,9 @@
 @media (max-width: 767px) {
     .login {
         flex-direction: column;
-        height: auto;
         padding: 1rem;
+        align-items: center;
+        justify-content: center;
     }
 
     .login .left {
@@ -165,7 +166,7 @@
     }
 
     .login .left img {
-        height: 50vh;
+        height: 40vh;
     }
 
     .login .right img {

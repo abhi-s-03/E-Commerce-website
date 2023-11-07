@@ -5,12 +5,15 @@ import SignupForm from "./pages/signup";
 import Landing from "./pages/landing";
 import Cart from "./pages/cart";
 import Checkout from "./pages/checkout";
-
+import AddProduct from "./pages/addProduct";
+import AddImage from "./pages/addImage";
 function App() {
   return (
     <>
      <Router>
         <Routes>
+          <Route path="/add" element={<AddProduct />} />
+          <Route path="/image" element={<AddImage />} />
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />

@@ -1,6 +1,7 @@
 import Navbar from "../components/navbar";
 import Offers from "../components/offers";
 import Product from "../components/product";
+import AddToCart from "../components/addToCart";
 import painting1 from "../assets/painting1.jpeg";
 import painting2 from "../assets/painting2.jpeg";
 import painting3 from "../assets/painting3.jpeg";
@@ -21,6 +22,11 @@ import photo2 from "../assets/photo2.jpeg";
 import photo3 from "../assets/photo3.jpeg";
 import photo4 from "../assets/photo4.jpeg";
 import photo5 from "../assets/photo5.jpeg";
+import handicraft1 from "../assets/handicraft1.jpeg";
+import handicraft2 from "../assets/handicraft2.jpeg";
+import handicraft3 from "../assets/handicraft3.jpeg";
+import handicraft4 from "../assets/handicraft4.jpeg";
+import handicraft5 from "../assets/handicraft5.jpeg";
 import "./styles/landing.css";
 
 const painting = [
@@ -135,6 +141,34 @@ const photo = [
   },
 ];
 
+const handicraft = [
+  {
+    link: "/",
+    image: handicraft1,
+    title: "Product 1",
+  },
+  {
+    link: "/",
+    image: handicraft2,
+    title: "Product 2",
+  },
+  {
+    link: "/",
+    image: handicraft3,
+    title: "Product 3",
+  },
+  {
+    link: "/",
+    image: handicraft4,
+    title: "Product 4",
+  },
+  {
+    link: "/",
+    image: handicraft5,
+    title: "Product 5",
+  },
+];
+
 const Landing = () => {
   return (
     <div className="landing">
@@ -144,6 +178,7 @@ const Landing = () => {
       <Product heading="Sculptures" products={sculpture} />
       <Product heading="Digital Art" products={digiart} />
       <Product heading="Photography" products={photo} />
+      <Product heading="Handicrafts" products={handicraft} />
     </div>
   );
 };
