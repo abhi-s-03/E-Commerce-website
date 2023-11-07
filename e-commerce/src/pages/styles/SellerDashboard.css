@@ -1,0 +1,74 @@
+.seller-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: relative; /* Add relative positioning to the header */
+}
+
+.return-button {
+  background: #333;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  padding: 10px;
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.header-text {
+  font-size: 24px;
+  font-weight: 600;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Center the text */
+}
+
+.dashboard-content {
+  display: flex;
+}
+
+.side-menu {
+  width: 250px;
+  background-color: #f0f0f0;
+  padding: 10px;
+}
+
+
+
+
+
+
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.side-menu li {
+  cursor: pointer;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.side-menu li:hover {
+  background-color: #ccc;
+}
+
+.side-menu .active {
+  background-color: #333;
+  color: #fff;
+}
+
+.section-content {
+  flex: 1;
+  padding: 20px;
+}

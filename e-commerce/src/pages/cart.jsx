@@ -53,7 +53,7 @@ function Cart() {
   };
 
   const calculateShippingCharges = () => {
-    // Implement your shipping charges calculation logic here
+    // Implement shipping charges calculation logic here
     return 10;
   };
 

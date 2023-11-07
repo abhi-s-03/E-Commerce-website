@@ -43,7 +43,7 @@ function Checkout() {
   };
 
   const calculateShippingCharges = () => {
-    // Implement your shipping charges calculation logic here
+    // Implement shipping charges calculation logic here
     return 10;
   };
 
@@ -63,7 +63,7 @@ function Checkout() {
   };
 
   const handlePayment = () => {
-    // Implement your payment processing logic here
+    // Implement payment processing logic here
   };
 
   return (
