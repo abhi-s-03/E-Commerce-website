@@ -1,4 +1,3 @@
-//import { useState } from "react";
 import { initializeApp } from "firebase/app";
 import { getFirestore,addDoc,collection } from "firebase/firestore";
 
@@ -33,7 +32,7 @@ const AddToCart = (props) => {
       }
     }
     
-    return(<div><button type="submit" onClick={handleSubmit}>Add To Cart</button></div>)
+    return(<div><button type="submit" onClick={handleSubmit}>Add to Cart</button></div>)
 }
 
 export default AddToCart;
