@@ -1,0 +1,74 @@
+.artwork-management-container {
+    text-align: center;
+    margin: 20px;
+  }
+  
+  .add-artwork-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 5px;
+  }
+  
+  .add-artwork-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .artwork-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .artwork-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    width: 300px;
+    padding: 10px;
+    background-color: #fff;
+  }
+  
+  .artwork-image {
+    width: 100%; /* Ensure images take the full width of the card */
+    height: 200px; /* Set a fixed height for all images */
+    overflow: hidden; /* Crop images if they exceed the fixed height */
+  }
+  
+  .artwork-image img {
+    width: 100%; /* Ensure images take the full width of the image div */
+    height: 100%; /* Maintain aspect ratio and fill the fixed height */
+    object-fit: cover; /* Crop or stretch images to cover the fixed size */
+  }
+  
+  .artwork-info {
+    text-align: left;
+  }
+  
+  .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .action-buttons button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  
+  .action-buttons button:hover {
+    background-color: #0056b3;
+  }
+  
