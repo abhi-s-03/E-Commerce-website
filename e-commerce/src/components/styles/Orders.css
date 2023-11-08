@@ -1,0 +1,81 @@
+.orders-container {
+    margin: 20px;
+  }
+  
+  .order {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Display items in a column layout */
+    position: relative; /* Add relative positioning to the order box */
+  }
+  
+  .order h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .order-items {
+    list-style: none;
+    padding: 0;
+    flex: 1; /* Allow the item list to expand and take remaining space */
+  }
+  
+  .order-item {
+    display: flex;
+    align-items: center; /* Center items vertically */
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+  }
+  
+  .item-image {
+    width: 100px; /* Set the desired width for the image */
+    height: 100px; /* Set the desired height for the image */
+    overflow: hidden;
+    border: 1px solid #ccc;
+    margin-right: 10px; /* Add spacing between image and details */
+  }
+  
+  .item-image img {
+    width: 100%; /* Make the image fill the container */
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire box */
+  }
+  
+  .item-details {
+    flex: 1; /* Allow details to take remaining space */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .item-name {
+    font-weight: bold;
+  }
+  
+  .item-price {
+    font-size: 12px;
+  }
+  
+  .item-quantity {
+    font-size: 12px;
+  }
+  
+  .process-order-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+    align-self: flex-end; /* Align the button to the bottom-right */
+    margin-top: 10px; /* Add spacing between the item details and the button */
+  }
+  
+  .process-order-button:hover {
+    background: #0056b3;
+  }
+  
+  /* Add more styling as needed for your specific design preferences */
+  

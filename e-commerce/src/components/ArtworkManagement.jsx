@@ -99,12 +99,13 @@ function ArtworkManagement() {
 
   return (
     <div className="artwork-management-container">
-      <h2>My Artworks</h2>
       <Link to="/add">
         <button className="add-artwork-button">
           Add New Artwork
         </button>
       </Link>
+      <h2>My Artworks</h2>
+      
 
       <div className="product-cards">
         {artistProd.map((art) => (

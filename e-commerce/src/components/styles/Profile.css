@@ -1,0 +1,49 @@
+.profile-container {
+    margin: 20px;
+    text-align: center;
+  }
+  
+  .profile-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .profile-image img {
+    width: 150px; /* Set the desired width for the circular profile image */
+    height: 150px; /* Set the desired height for the circular profile image */
+    border: 2px solid black; /* Add a border to create a circular frame */
+    border-radius: 50%; /* Make the image appear circular */
+    object-fit: cover; /* Ensure the image covers the entire circular frame */
+  }
+  
+  .profile-details {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .profile-details h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .profile-details p {
+    font-size: 16px;
+  }
+  
+  .edit-profile-button {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+  }
+  
+  .edit-profile-button:hover {
+    background: #0056b3;
+  }
+  
