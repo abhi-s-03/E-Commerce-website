@@ -8,6 +8,11 @@ import Checkout from "./pages/checkout";
 import AddProduct from "./pages/addProduct";
 import Seller from "./pages/seller";
 import AddImage from "./pages/addImage";
+import Paintings from "./pages/paintings";
+import Sculptures from "./pages/sculptures";
+import Digiart from "./pages/digiart";
+import Photography from "./pages/photography";
+import Handicrafts from "./pages/handicrafts";
 function App() {
   return (
     <>
@@ -21,6 +26,11 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/seller" element={<Seller />} />
+          <Route path="/paintings" element={<Paintings />} />
+          <Route path="/sculptures" element={<Sculptures />} />
+          <Route path="/digiart" element={<Digiart />} />
+          <Route path="/photography" element={<Photography />} />
+          <Route path="/handicrafts" element={<Handicrafts />} />
         </Routes>
       </Router>
     </>

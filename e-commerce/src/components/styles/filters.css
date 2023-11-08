@@ -1,0 +1,110 @@
+.filters {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    width: 20%;
+    background-color: white;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+    height: max-content;
+}
+
+.filters h3 {
+    font-size: 1.5rem;
+    margin: .7rem 0;
+}
+
+.price,
+.rating,
+.discount,
+.availability {
+    margin: 1rem 0;
+}
+
+.price output,
+.filters label {
+    font-size: 1rem;
+}
+
+.group {
+    padding: .5rem;
+}
+
+.rating input[type="checkbox"],
+.discount input[type="checkbox"],
+.availability input[type="checkbox"] {
+    margin-right: 0.5rem;
+}
+
+.filters input[type="number"] {
+    width: 40%;
+    padding: 0.5rem;
+    margin-left: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#minInput {
+    margin-left: 1.3rem;
+}
+
+@media (max-width: 768px) {
+    .dropdown-content {
+        display: block;
+        padding: 1rem;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+    }
+
+    .filters {
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .filters .open {
+        max-height: max-content;
+    }
+
+    .filters h3 {
+        font-size: 1.3rem;
+    }
+
+    .filters input[type="number"] {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    #minInput {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .dropdown-content {
+        display: block;
+        padding: 1rem;
+    }
+
+    .filters {
+        padding: 0.5rem;
+    }
+
+    .filters h3 {
+        font-size: 1.2rem;
+        margin: 0.5rem 0;
+    }
+
+    .group {
+        padding: 0.3rem;
+    }
+
+    .filters input[type="number"] {
+        width: 100%;
+        padding: 0.3rem;
+        margin-left: 0;
+    }
+
+    #minInput {
+        margin-left: 0;
+    }
+}

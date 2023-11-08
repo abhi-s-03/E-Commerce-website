@@ -174,11 +174,11 @@ const Landing = () => {
     <div className="landing">
       <Navbar />
       <Offers />
-      <Product heading="Paintings" products={painting} />
-      <Product heading="Sculptures" products={sculpture} />
-      <Product heading="Digital Art" products={digiart} />
-      <Product heading="Photography" products={photo} />
-      <Product heading="Handicrafts" products={handicraft} />
+      <Product heading="Paintings" products={painting} more="/paintings"/>
+      <Product heading="Sculptures" products={sculpture} more="/sculptures" />
+      <Product heading="Digital Art" products={digiart} more="/digiart" />
+      <Product heading="Photography" products={photo} more="/photography"/>
+      <Product heading="Handicrafts" products={handicraft} more="/handicrafts" />
       <Footer />
     </div>
   );

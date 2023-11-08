@@ -1,5 +1,4 @@
-import { initializeApp } from "firebase/app";
-import { getFirestore,addDoc,collection } from "firebase/firestore";
+import { addDoc,collection } from "firebase/firestore";
 import {db} from "../auth/auth";
 
 const AddToCart = (props) => {
