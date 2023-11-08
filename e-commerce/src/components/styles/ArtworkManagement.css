@@ -13,9 +13,13 @@
   cursor: pointer;
   margin-bottom: 1.25rem;
   border-radius: 0.3125rem;
-  position: absolute; 
-  top: 3.7rem; 
-  right: 0.5rem; 
+  display: block; 
+  margin: 0 auto;
+  margin-bottom: 1rem;
+  max-width: 18rem;
+  max-height: 2rem;
+  align-content: center;
+  padding: 0.5rem;
 }
 
 .add-artwork-button:hover {
