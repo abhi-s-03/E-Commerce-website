@@ -1,22 +1,24 @@
 import React, { useState } from "react";
-import { addDoc, collection, getDocs, where, query } from "firebase/firestore";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import "./styles/addProduct.css";
+import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { db, storage } from "../auth/auth";
 
 function AddProduct() {
-  const prodArray = [];
-  const [artistProd, setArtistProd] = useState([]);
   const [artist, setArtist] = useState("");
   const [qty, setQty] = useState("");
   const [description, setDescription] = useState("");
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
+
   const handleImageChange = (e) => {
     const file = e.target.files[0];
     console.log(file);
     setImage(file);
   };
+
   const handleFormSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -40,79 +42,57 @@ function AddProduct() {
       setName("");
       setQty("");
     } catch (e) {
-      alert("Error adding document: ", e);
-    }
-  };
-  const handleViewProd = async (e) => {
-    e.preventDefault();
-    try {
-      const q = query(
-        collection(db, "products"),
-        where("artistID", "==", "Aaron")
-      );
-      const snapshot = await getDocs(q);
-      snapshot.forEach((doc) => {
-        console.log(doc.data());
-        prodArray.push(doc.data());
-      });
-      setArtistProd(prodArray);
-      console.log(prodArray);
-    } catch (error) {
-      console.error("ERROR is" + error);
+      alert("Error adding document: " + e);
     }
   };
 
   return (
-    <div>
-      <div>
+    <div className="container">
+      <div className="form-container">
+        <h2>Add New Artwork</h2>
         <input
+          className="input-field"
           placeholder="ARTIST"
           value={artist}
           onChange={(e) => setArtist(e.target.value)}
         />
         <input
+          className="input-field"
           placeholder="QTY"
           value={qty}
           onChange={(e) => setQty(e.target.value)}
         />
         <input
+          className="input-field"
           placeholder="DESCRIPTION"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         />
         <input
-          placeholder="NAME"
+          className="input-field"
+          placeholder="ART NAME"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
         <input
+          className="input-field"
           placeholder="PRICE"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
         />
-        <input type="file" accept="image/*" onChange={handleImageChange} />
-        <button onClick={handleFormSubmit}>SUBMIT</button>
+        <input
+          className="input-field"
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+        />
+        <button className="submit-button" onClick={handleFormSubmit}>
+          SUBMIT
+        </button>
       </div>
-      <div>
-        <h>Existing Prods</h>
-        <hr></hr>
-
-        <button onClick={handleViewProd}>VIEW PRODS</button>
-        {artistProd.map((art) => (
-          <div>
-            <h>{art.prodDesc}</h>
-            <br></br>
-            <h>{art.image}</h>
-            <br></br>
-            <h>{art.prodQty}</h>
-            <br></br>
-            <h>{art.artistID}</h>
-            <br></br>
-            <h>{art.prodPrice}</h>
-            <hr />
-          </div>
-        ))}
-      </div>
+      <Link to="/seller">
+        <button className="return-to-seller-button">&#8592;</button> {/* Left-facing arrow */}
+      </Link>
     </div>
   );
 }
