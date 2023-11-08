@@ -25,7 +25,7 @@ function ArtworkManagement() {
 
   const loadProducts = async () => {
     try {
-      const q = query(collection(db, "products"), where("artistID", "==", "Aaron"));
+      const q = query(collection(db, "products"), where("artistID", "==", "Admin"));
       const snapshot = await getDocs(q);
       const prodArray = [];
       snapshot.forEach((doc) => {
