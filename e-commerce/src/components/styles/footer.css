@@ -40,11 +40,6 @@ footer {
     color: #b3b3b3;
 }
 
-.footer i {
-    font-style: normal;
-    font-size: 1rem;
-}
-
 .line {
     height: 1px;
     background-color: #fff;
@@ -76,7 +71,7 @@ footer {
         font-size: 10px;
     }
 
-    .end span{
+    .end span {
         font-size: 0.6rem;
     }
 }

@@ -1,6 +1,10 @@
 import "./styles/footer.css";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faFacebook, faXTwitter, faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faFacebook,
+  faXTwitter,
+  faInstagram,
+} from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
   return (
@@ -59,17 +63,17 @@ const Footer = () => {
           <ul>
             <li>
               <a href="#">
-              <FontAwesomeIcon icon={faFacebook} />
+                <FontAwesomeIcon icon={faFacebook} />
               </a>
             </li>
             <li>
               <a href="#">
-              <FontAwesomeIcon icon={faXTwitter} />
+                <FontAwesomeIcon icon={faXTwitter} />
               </a>
             </li>
             <li>
               <a href="#">
-              <FontAwesomeIcon icon={faInstagram} />
+                <FontAwesomeIcon icon={faInstagram} />
               </a>
             </li>
           </ul>
