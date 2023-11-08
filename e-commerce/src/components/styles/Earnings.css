@@ -1,0 +1,23 @@
+.earnings-container {
+    margin: 20px;
+  }
+  
+  .earnings-section {
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px 0;
+  }
+  
+  .earnings-section h3 {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .earnings-section p {
+    font-size: 16px;
+  }
+  
+  /* Add more styling as needed for your specific design preferences */
+  
