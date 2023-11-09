@@ -16,7 +16,7 @@ ul {
   padding: 0;
 }
 
-li {
+.side-menu li {
   cursor: pointer;
   margin-bottom: 1em;
   padding: 0.5em;
@@ -24,7 +24,7 @@ li {
   transition: background-color 0.3s ease; /* Add transition effect on hover */
 }
 
-li:hover {
+.side-menu li:hover {
   background-color: #e5e5e5; /* Lighter background on hover */
 }
 
@@ -34,6 +34,6 @@ li:hover {
 }
 
 /* Add a border between list items for a cleaner look */
-li:not(:last-child) {
+.side-menu :not(:last-child) {
   border-bottom: 1px solid #ccc;
 }
