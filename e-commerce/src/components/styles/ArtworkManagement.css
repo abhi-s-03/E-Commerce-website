@@ -46,6 +46,7 @@
   align-items: center;
   text-align: center;
   margin: 1.25rem 0.625rem;
+  position: relative; /* Add position relative to the product card */
 }
 
 .product-image {
@@ -72,23 +73,26 @@
 
 .action-buttons {
   display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0; /* Fix edit button to the bottom left */
   justify-content: space-between;
-  margin-top: 1.25rem;
   width: 100%;
 }
 
 .action-buttons button {
-  background-color: #007BFF;
+  background-color: #3c3c3c; /* Grey color for buttons */
   color: #fff;
   border: none;
   padding: 0.3125rem 0.625rem;
   font-size: 0.875rem;
   cursor: pointer;
   border-radius: 0.3125rem;
+  margin: 0.8rem;
 }
 
 .action-buttons button:hover {
-  background-color: #0056b3;
+  background-color: #716e6e; /* Darker grey on hover */
 }
 
 .edit-artwork-popup {
@@ -148,5 +152,3 @@
 .edit-artwork-form button:hover {
   background: #0056b3;
 }
-
-/* ... (existing styles) */

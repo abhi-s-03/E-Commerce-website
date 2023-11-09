@@ -106,7 +106,7 @@ function ArtworkManagement() {
             <h3 className="product-name">{art.prodName}</h3>
             <p className="product-description">{art.prodDesc}</p>
             <p className="product-quantity">Quantity: {art.prodQty}</p>
-            <p className="product-price">Price: ${art.prodPrice}</p>
+            <p className="product-price">Price: ₹{art.prodPrice}</p>
             <div className="action-buttons">
               <button onClick={() => editArtwork(art.id)}>Edit</button>
               <button onClick={() => deleteArtwork(art.id)}>Delete</button>
