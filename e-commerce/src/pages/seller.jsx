@@ -1,3 +1,4 @@
+// seller.jsx
 import { useState } from "react";
 import "./styles/seller.css";
 import ArtworkManagement from "../components/ArtworkManagement";
@@ -21,31 +22,29 @@ const Seller = () => {
   };
 
   return (
-    <div className="seller-dashboard">
+    <div className={`seller-dashboard ${isMenuOpen ? "open" : ""}`}>
+      <div className="menu-icon" onClick={toggleMenu}>
+        <img src={menuicon} alt="Menu" />
+      </div>
       <header>
-        <div className="menu-icon" onClick={toggleMenu}>
-          <img src={menuicon} alt="Menu" />
-        </div>
         <h1>Seller Dashboard</h1>
-        <Link to="/">
-          <button
-            onClick={() => (window.location.href = "/")}
-            className="return-button"
-          >
-            Return
-          </button>
-        </Link>
       </header>
-      <SellerSideMenu
-        isMenuOpen={isMenuOpen}
-        handleSectionChange={handleSectionChange}
-        activeSection={activeSection}
-      />
-      <div className="section-content">
-        {activeSection === "artworkManagement" && <ArtworkManagement />}
-        {activeSection === "orders" && <Orders />}
-        {activeSection === "profile" && <Profile />}
-        {activeSection === "earnings" && <Earnings />}
+      <div className="dashboard-content">
+        <div className={`side-menu ${isMenuOpen ? "open" : ""}`}>
+          {isMenuOpen && (
+            <SellerSideMenu
+              isMenuOpen={isMenuOpen}
+              handleSectionChange={handleSectionChange}
+              activeSection={activeSection}
+            />
+          )}
+        </div>
+        <div className={`section-content ${isMenuOpen ? "with-sidebar" : ""}`}>
+          {activeSection === "artworkManagement" && <ArtworkManagement />}
+          {activeSection === "orders" && <Orders />}
+          {activeSection === "profile" && <Profile />}
+          {activeSection === "earnings" && <Earnings />}
+        </div>
       </div>
     </div>
   );
