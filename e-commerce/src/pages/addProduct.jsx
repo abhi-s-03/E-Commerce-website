@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom"; // Import Link from react-router-dom
+import { Link } from "react-router-dom";
 import "./styles/addProduct.css";
 import { addDoc, collection } from "firebase/firestore";
 import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -13,10 +13,10 @@ function AddProduct() {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   const [type, setType] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
-    console.log(file);
     setImage(file);
   };
 
@@ -33,20 +33,28 @@ function AddProduct() {
         prodPrice: parseInt(price),
         prodQty: parseInt(qty),
         image: imageUrl,
-        prodType: type
+        prodType: type,
       });
-
+  
       console.log("Document written with ID: ", docRef.id);
       setArtist("");
       setDescription("");
-      setImage(null);
       setPrice("");
       setName("");
       setQty("");
       setType("");
+      setShowPopup(true);
+  
+      // Delay clearing the image state
+      setTimeout(() => {
+        setImage(null);
+      }, 100);
     } catch (e) {
       alert("Error adding document: " + e);
     }
+  }
+  const closePopup = () => {
+    setShowPopup(false);
   };
 
   return (
@@ -96,14 +104,24 @@ function AddProduct() {
           onChange={handleImageChange}
         />
         <button className="submit-button" onClick={handleFormSubmit}>
-          SUBMIT
+        SUBMIT
+      </button>
+    </div>
+
+    {showPopup && (
+      <div className="popup">
+        <p>The product is successfully added</p>
+        <button className="popup-button" onClick={closePopup}>
+          OK
         </button>
       </div>
-      <Link to="/seller">
-        <button className="return-to-seller-button">&#8592;</button> {/* Left-facing arrow */}
-      </Link>
-    </div>
-  );
+    )}
+
+    <Link to="/seller">
+      <button className="return-to-seller-button">&#8592;</button>
+    </Link>
+  </div>
+);
 }
 
 export default AddProduct;

@@ -6,7 +6,6 @@ import Orders from "../components/Orders";
 import Profile from "../components/Profile";
 import Earnings from "../components/Earnings";
 import SellerSideMenu from "../components/sellersidemenu";
-import { Link } from "react-router-dom";
 import menuicon from "../assets/menu-icon.svg";
 
 const Seller = () => {
@@ -45,6 +44,7 @@ const Seller = () => {
           {activeSection === "profile" && <Profile />}
           {activeSection === "earnings" && <Earnings />}
         </div>
+        
       </div>
     </div>
   );
