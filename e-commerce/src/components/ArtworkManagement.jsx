@@ -1,6 +1,7 @@
-import './styles/ArtworkManagement.css';
+// ArtworkManagement.jsx
+
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useState, useEffect } from "react";
 import {
   collection,
   getDocs,
@@ -10,7 +11,8 @@ import {
   doc,
   deleteDoc
 } from "firebase/firestore";
-import {db} from "../auth/auth";
+import { db } from "../auth/auth";
+import './styles/ArtworkManagement.css';
 
 function ArtworkManagement() {
   const [artistProd, setArtistProd] = useState([]);
@@ -30,8 +32,8 @@ function ArtworkManagement() {
       const prodArray = [];
       snapshot.forEach((doc) => {
         prodArray.push({
-          id: doc.id, // Add the document ID to the object
-          ...doc.data(), // Spread the document data
+          id: doc.id,
+          ...doc.data(),
         });
       });
       setArtistProd(prodArray);
@@ -42,11 +44,10 @@ function ArtworkManagement() {
 
   useEffect(() => {
     loadProducts();
-  }, []); // Empty dependency array to run the effect only once on component mount
+  }, []);
 
   const editArtwork = (id) => {
     const artworkToEdit = artistProd.find((art) => art.id === id);
-    console.log(id);
     setEditArtworkData(artworkToEdit);
     setIsEditing(true);
   };
@@ -64,11 +65,8 @@ function ArtworkManagement() {
 
   const saveEdit = async () => {
     const { id, prodName, prodDesc, prodQty, prodPrice } = editArtworkData;
-    console.log(id);
 
-    // Update the artwork data in Firestore
     try {
-      //const artworkDocRef = doc(db, 'products', id);
       await updateDoc(doc(db, 'products', id), {
         prodName,
         prodDesc,
@@ -76,7 +74,6 @@ function ArtworkManagement() {
         prodPrice: parseInt(prodPrice),
       });
 
-      // After successfully updating, reload the products and exit edit mode
       loadProducts();
       cancelEdit();
     } catch (error) {
@@ -85,12 +82,8 @@ function ArtworkManagement() {
   };
 
   const deleteArtwork = async (id) => {
-    // Implement functionality to delete an artwork
     try {
-      // Delete the artwork data in Firestore
       await deleteDoc(doc(db, "products", id));
-  
-      // After successfully deleting, reload the products
       loadProducts();
     } catch (error) {
       console.error('Error deleting artwork:', error);
@@ -105,7 +98,6 @@ function ArtworkManagement() {
         </button>
       </Link>
       <h2>My Artworks</h2>
-      
 
       <div className="product-cards">
         {artistProd.map((art) => (
@@ -123,44 +115,45 @@ function ArtworkManagement() {
         ))}
       </div>
 
-      {/* This is the edit art component */}
       {isEditing && (
-        <div className="edit-artwork-form">
-          <h3>Edit Artwork</h3>
-          <label>
-            Name:
-            <input
-              type="text"
-              value={editArtworkData.prodName}
-              onChange={(e) => setEditArtworkData({ ...editArtworkData, prodName: e.target.value })}
-            />
-          </label>
-          <label>
-            Description:
-            <textarea
-              value={editArtworkData.prodDesc}
-              onChange={(e) => setEditArtworkData({ ...editArtworkData, prodDesc: e.target.value })}
-            />
-          </label>
-          <label>
-            Quantity:
-            <input
-              type="number"
-              value={editArtworkData.prodQty}
-              onChange={(e) => setEditArtworkData({ ...editArtworkData, prodQty: parseInt(e.target.value) || 0 })}
-            />
-          </label>
-          <label>
-            Price:
-            <input
-              type="number"
-              value={editArtworkData.prodPrice}
-              onChange={(e) => setEditArtworkData({ ...editArtworkData, prodPrice: parseFloat(e.target.value) || 0 })}
-            />
-          </label>
-          <div className="edit-artwork-buttons">
-            <button onClick={saveEdit}>Save</button>
-            <button onClick={cancelEdit}>Cancel</button>
+        <div className="edit-artwork-popup">
+          <div className="edit-artwork-form">
+            <h3>Edit Artwork</h3>
+            <label>
+              Name:
+              <input
+                type="text"
+                value={editArtworkData.prodName}
+                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodName: e.target.value })}
+              />
+            </label>
+            <label>
+              Description:
+              <textarea
+                value={editArtworkData.prodDesc}
+                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodDesc: e.target.value })}
+              />
+            </label>
+            <label>
+              Quantity:
+              <input
+                type="number"
+                value={editArtworkData.prodQty}
+                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodQty: parseInt(e.target.value) || 0 })}
+              />
+            </label>
+            <label>
+              Price:
+              <input
+                type="number"
+                value={editArtworkData.prodPrice}
+                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodPrice: parseFloat(e.target.value) || 0 })}
+              />
+            </label>
+            <div className="edit-artwork-buttons">
+              <button onClick={saveEdit}>Save</button>
+              <button onClick={cancelEdit}>Cancel</button>
+            </div>
           </div>
         </div>
       )}
