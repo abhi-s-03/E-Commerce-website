@@ -12,6 +12,7 @@ function AddProduct() {
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
+  const [type, setType] = useState("");
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -32,6 +33,7 @@ function AddProduct() {
         prodPrice: parseInt(price),
         prodQty: parseInt(qty),
         image: imageUrl,
+        prodType: type
       });
 
       console.log("Document written with ID: ", docRef.id);
@@ -41,6 +43,7 @@ function AddProduct() {
       setPrice("");
       setName("");
       setQty("");
+      setType("");
     } catch (e) {
       alert("Error adding document: " + e);
     }
@@ -79,6 +82,12 @@ function AddProduct() {
           placeholder="PRICE"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
+        />
+        <input
+          className="input-field"
+          placeholder="PRODUCT TYPE" // Add input field for prodType
+          value={type}
+          onChange={(e) => setType(e.target.value)}
         />
         <input
           className="input-field"
