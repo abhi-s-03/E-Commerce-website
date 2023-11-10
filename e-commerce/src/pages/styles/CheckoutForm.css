@@ -1,0 +1,159 @@
+/* CheckoutForm.css */
+
+.checkout-container {
+  text-align: center;
+  margin: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.checkout-container-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.checkout-form {
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 2rem;
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.form-group {
+  width: 48%;
+}
+
+.full-width {
+  width: 100%;
+}
+
+input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.1875rem;
+  box-sizing: border-box;
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: row; /* Adjusted to be in a row */
+  justify-content: space-between;
+  margin-top: 1rem;
+  
+}
+
+.payment-options {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.3125rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.subheading {
+  font-size: 1.125rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.proceed-button-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.proceed-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  margin-top: 0;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 0.5rem;
+}
+
+.proceed-button:hover {
+  background-color: #45a049;
+}
+
+.return-from-checkout {
+  position: absolute;
+  top: 1.25rem;
+  left: 1.25rem;
+  display: flex;
+  align-items: center;
+}
+
+.back-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.back-arrow {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.2rem;
+}
+.error-message {
+  color: rgb(125, 16, 16);
+}
+
+/* Media query for mobile screens */
+@media only screen and (max-width: 768px) {
+  .checkout-form {
+    width: 95%;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .form-group {
+    width: 100%;
+  }
+
+  .full-width {
+    width: 100%;
+  }
+
+  .proceed-button-link {
+    width: 100%;
+  }
+
+  .back-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .checkout-container-header {
+    font-size: 1.8rem;
+  }
+  .radio-group {
+    font-size: 0.8rem;
+    
+  }
+}
