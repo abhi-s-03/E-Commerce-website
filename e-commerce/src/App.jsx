@@ -4,7 +4,8 @@ import LoginForm from "./pages/login";
 import SignupForm from "./pages/signup";
 import Landing from "./pages/landing";
 import Cart from "./pages/cart";
-import Checkout from "./pages/checkout";
+import CheckoutForm from "./pages/checkoutform";
+import Order from "./pages/Order";
 import AddProduct from "./pages/addProduct";
 import Seller from "./pages/seller";
 import AddImage from "./pages/addImage";
@@ -25,7 +26,8 @@ function App() {
           <Route path="/login" element={<LoginForm />} />
           <Route path="/signup" element={<SignupForm />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/checkoutform" element={<CheckoutForm />} />
+          <Route path="/ordersummary" element={<Order />} />
           <Route path="/seller" element={<Seller />} />
           <Route path="/paintings" element={<Paintings />} />
           <Route path="/sculptures" element={<Sculptures />} />
@@ -33,6 +35,7 @@ function App() {
           <Route path="/photography" element={<Photography />} />
           <Route path="/handicrafts" element={<Handicrafts />} />
           <Route path="/individual" element={<Individual />} />
+
         </Routes>
       </Router>
     </>

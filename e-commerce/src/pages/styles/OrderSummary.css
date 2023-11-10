@@ -1,0 +1,144 @@
+/* OrderSummary.css */
+
+.order-summary-container {
+  text-align: center;
+  margin: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.order-summary-header {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.order-summary-form {
+  width: 60%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.3125rem;
+  padding: 2rem;
+  box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+  margin: 0 auto;
+}
+
+.product-details {
+  margin-bottom: 1rem;
+}
+
+.product-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-size: 1em;
+}
+
+.product-name-summarypage {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+
+
+.order-details {
+  margin-bottom: 1rem;
+}
+
+.order-subtotal,
+.order-shipping-charges,
+.order-total-amount {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  font-weight: 550;
+}
+
+.order-total-amount {
+  font-size: 1.1em;
+  font-weight: 555;
+}
+
+.order-place-button {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 1.5rem;
+  font-size: 1.4rem;
+  cursor: pointer;
+  border-radius: 0.3125rem;
+  margin: 0.5rem auto;
+  display: block;
+  max-height: 4rem;
+  align-items: center;
+}
+
+.order-place-button:hover {
+  background-color: #45a049;
+}
+
+.order-return-link {
+  margin-top: 1rem;
+}
+
+.order-back-link {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.order-back-arrow {
+  width: 30px;
+  height: 30px;
+  margin-right: 0.2rem;
+}
+
+@media only screen and (max-width: 768px) {
+  
+  .back-arrow {
+    width: 20px;
+    height: 20px;
+  }
+
+  .order-place-button {
+    padding: 0.5rem;
+    font-size: 1rem;
+    border-radius: 0.3125rem;
+    margin: 0.2rem auto;
+    max-height: 3rem;
+  }
+
+  .order-summary-container {
+    margin: 0.3rem;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .order-summary-form {
+    width: 90%;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 0.3125rem;
+    padding: 1rem;
+    box-shadow: 0 0 0.3125rem rgba(0, 0, 0, 0.2);
+    margin-top: 5rem;;
+  }
+
+  .order-summary-header {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    margin-top: 1rem;
+  }
+
+  .order-return-link {
+    position: absolute;
+    top: 1.25rem;
+    left: 1.25rem;
+    display: flex;
+    align-items: center;
+  }
+}
+
