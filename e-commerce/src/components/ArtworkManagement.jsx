@@ -1,5 +1,3 @@
-// ArtworkManagement.jsx
-
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import {
@@ -9,17 +7,17 @@ import {
   query,
   updateDoc,
   doc,
-  deleteDoc
+  deleteDoc,
 } from "firebase/firestore";
 import { db } from "../auth/auth";
-import './styles/ArtworkManagement.css';
+import "./styles/ArtworkManagement.css";
 
 function ArtworkManagement() {
   const [artistProd, setArtistProd] = useState([]);
   const [editArtworkData, setEditArtworkData] = useState({
-    id: '',
-    prodName: '',
-    prodDesc: '',
+    id: "",
+    prodName: "",
+    prodDesc: "",
     prodQty: 0,
     prodPrice: 0,
   });
@@ -27,7 +25,10 @@ function ArtworkManagement() {
 
   const loadProducts = async () => {
     try {
-      const q = query(collection(db, "products"), where("artistID", "==", "Admin"));
+      const q = query(
+        collection(db, "products"),
+        where("artistID", "==", "Admin")
+      );
       const snapshot = await getDocs(q);
       const prodArray = [];
       snapshot.forEach((doc) => {
@@ -54,9 +55,9 @@ function ArtworkManagement() {
 
   const cancelEdit = () => {
     setEditArtworkData({
-      id: '',
-      prodName: '',
-      prodDesc: '',
+      id: "",
+      prodName: "",
+      prodDesc: "",
       prodQty: 0,
       prodPrice: 0,
     });
@@ -67,7 +68,7 @@ function ArtworkManagement() {
     const { id, prodName, prodDesc, prodQty, prodPrice } = editArtworkData;
 
     try {
-      await updateDoc(doc(db, 'products', id), {
+      await updateDoc(doc(db, "products", id), {
         prodName,
         prodDesc,
         prodQty: parseInt(prodQty),
@@ -77,7 +78,7 @@ function ArtworkManagement() {
       loadProducts();
       cancelEdit();
     } catch (error) {
-      console.error('Error updating artwork:', error);
+      console.error("Error updating artwork:", error);
     }
   };
 
@@ -86,27 +87,33 @@ function ArtworkManagement() {
       await deleteDoc(doc(db, "products", id));
       loadProducts();
     } catch (error) {
-      console.error('Error deleting artwork:', error);
+      console.error("Error deleting artwork:", error);
     }
   };
 
   return (
     <div className="artwork-management-container">
       <Link to="/add">
-        <button className="add-artwork-button">
-          Add New Artwork
-        </button>
+        <button className="add-artwork-button">Add New Artwork</button>
       </Link>
-      <h2>My Artworks</h2>
-
       <div className="product-cards">
         {artistProd.map((art) => (
           <div key={art.prodName} className="product-card">
-            <img src={art.image} alt={art.prodName} className="product-image" />
-            <h3 className="product-name">{art.prodName}</h3>
-            <p className="product-description">{art.prodDesc}</p>
-            <p className="product-quantity">Quantity: {art.prodQty}</p>
-            <p className="product-price">Price: ₹{art.prodPrice}</p>
+            <div className="product-card-img">
+              <img
+                src={art.image}
+                alt={art.prodName}
+                className="product-image"
+              />
+            </div>
+            <div className="product-card-datails">
+              <h3>{art.prodName}</h3>
+              <p>{art.prodDesc}</p>
+            </div>
+            <div className="product-card-price">
+              <p>Quantity: {art.prodQty}</p>
+              <p>Price: ₹{art.prodPrice}</p>
+            </div>
             <div className="action-buttons">
               <button onClick={() => editArtwork(art.id)}>Edit</button>
               <button onClick={() => deleteArtwork(art.id)}>Delete</button>
@@ -124,14 +131,24 @@ function ArtworkManagement() {
               <input
                 type="text"
                 value={editArtworkData.prodName}
-                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodName: e.target.value })}
+                onChange={(e) =>
+                  setEditArtworkData({
+                    ...editArtworkData,
+                    prodName: e.target.value,
+                  })
+                }
               />
             </label>
             <label>
               Description:
               <textarea
                 value={editArtworkData.prodDesc}
-                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodDesc: e.target.value })}
+                onChange={(e) =>
+                  setEditArtworkData({
+                    ...editArtworkData,
+                    prodDesc: e.target.value,
+                  })
+                }
               />
             </label>
             <label>
@@ -139,7 +156,12 @@ function ArtworkManagement() {
               <input
                 type="number"
                 value={editArtworkData.prodQty}
-                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodQty: parseInt(e.target.value) || 0 })}
+                onChange={(e) =>
+                  setEditArtworkData({
+                    ...editArtworkData,
+                    prodQty: parseInt(e.target.value) || 0,
+                  })
+                }
               />
             </label>
             <label>
@@ -147,7 +169,12 @@ function ArtworkManagement() {
               <input
                 type="number"
                 value={editArtworkData.prodPrice}
-                onChange={(e) => setEditArtworkData({ ...editArtworkData, prodPrice: parseFloat(e.target.value) || 0 })}
+                onChange={(e) =>
+                  setEditArtworkData({
+                    ...editArtworkData,
+                    prodPrice: parseFloat(e.target.value) || 0,
+                  })
+                }
               />
             </label>
             <div className="edit-artwork-buttons">
