@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import carticon from "../assets/carticon.svg";
 import buyicon from "../assets/buyicon.svg"; // Import your buy icon
 import backArrow from "../assets/back-arrow.svg";
-import addToCart from "../components/addToCart"
 import { addDoc,collection } from "firebase/firestore";
 import {db} from "../auth/auth";
 
