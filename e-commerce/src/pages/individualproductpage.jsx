@@ -3,7 +3,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import carticon from "../assets/carticon.svg";
-import backArrow from "../assets/back-arrow.svg"; 
+import buyicon from "../assets/buyicon.svg"; // Import your buy icon
+import backArrow from "../assets/back-arrow.svg";
 
 import './styles/individualproductpage.css';
 
@@ -22,7 +23,6 @@ function IndividualProductPage({ location = { state: null } }) {
   return (
     <div className="individual-product-container">
       <Link to="#" className="back-link">
-        {/* Use your arrow icon or simply use '<' */}
         <img src={backArrow} alt="Back" className="back-arrow" />
       </Link>
       <div className="product-image-container">
@@ -37,6 +37,10 @@ function IndividualProductPage({ location = { state: null } }) {
           <button className="add-to-cart-button">
             <img src={carticon} alt="Add to Cart" className="cart-icon" />
             Add to Cart
+          </button>
+          <button className="buy-now-button">
+            <img src={buyicon} alt="Buy Now" className="buy-icon" />
+            Buy Now
           </button>
         </div>
       </div>
