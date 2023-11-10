@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./styles/cart.css";
 import deleteimg from "../assets/delete-img.svg";
 import plussymbol from "../assets/plus-symbol.svg";
