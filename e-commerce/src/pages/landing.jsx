@@ -4,7 +4,7 @@ import Product from "../components/product";
 import Footer from "../components/footer";
 import "./styles/landing.css";
 import { useState, useEffect } from 'react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../auth/auth';
 
 const Landing = () => {
