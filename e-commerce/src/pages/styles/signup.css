@@ -18,12 +18,12 @@
 }
 
 .signup button {
-    padding: .7rem 2rem;
+    padding: .6rem 2rem;
     border: none;
     cursor: pointer;
     color: #fff;
     font-weight: bold;
-    margin-bottom: 1rem;
+    margin-bottom: .6rem;
     border-radius: 10px;
     width: 50%;
 }
@@ -50,7 +50,7 @@
     width: 80%;
     height: 1px;
     background-color: #ccc;
-    margin: 1rem 0;
+    margin: .7rem 0;
 }
 
 .signup .form {
