@@ -1,7 +1,5 @@
-// individualproductpage.jsx
-
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import carticon from "../assets/carticon.svg";
 import buyicon from "../assets/buyicon.svg"; // Import your buy icon
 import backArrow from "../assets/back-arrow.svg";
@@ -24,21 +22,14 @@ async function AddToCart(data) {
   }
 }
 
-function IndividualProductPage({ location = { state: null } }) {
-  // Dummy values
-  const dummyData = {
-    sellerName: "Abhishek S",
-    image: "item1.jpg", // Placeholder image URL
-    prodName: "Abstract Masterpiece",
-    prodDesc: "A stunning abstract artwork that captures the essence of emotions. Remembering to Abhilash for his new Ray Ban glasses",
-    prodPrice: 200.50,
-  };
-
-  const { sellerName, image, prodName, prodDesc, prodPrice } = location.state || dummyData;
+function IndividualProductPage() {
+  const location = useLocation();
+  const product  = location.state;
+  const { artistID, image, prodName, prodDesc, prodPrice } = product;
 
   return (
     <div className="individual-product-container">
-      <Link to="#" className="back-link">
+      <Link to="/" className="back-link">
         <img src={backArrow} alt="Back" className="back-arrow" />
       </Link>
       <div className="product-image-container">
@@ -46,7 +37,7 @@ function IndividualProductPage({ location = { state: null } }) {
       </div>
       <div className="product-details-container">
         <h2 className="product-name">{prodName}</h2>
-        <p className="seller-name">Sold by: {sellerName}</p>
+        <p className="seller-name">Sold by: {artistID}</p>
         <p className="product-price">Price: ₹{prodPrice}</p>
         <p className="product-description">{prodDesc}</p>
         <div className="add-to-cart-section">

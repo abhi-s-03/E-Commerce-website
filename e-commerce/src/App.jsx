@@ -13,7 +13,8 @@ import Sculptures from "./pages/sculptures";
 import Digiart from "./pages/digiart";
 import Photography from "./pages/photography";
 import Handicrafts from "./pages/handicrafts";
-import Individual from "./pages/individualproductpage";
+import IndividualProductPage from "./pages/individualproductpage";
+
 function App() {
   return (
     <>
@@ -32,7 +33,7 @@ function App() {
           <Route path="/digiart" element={<Digiart />} />
           <Route path="/photography" element={<Photography />} />
           <Route path="/handicrafts" element={<Handicrafts />} />
-          <Route path="/individual" element={<Individual />} />
+          <Route path="/product/:id" element={<IndividualProductPage />} />
         </Routes>
       </Router>
     </>
