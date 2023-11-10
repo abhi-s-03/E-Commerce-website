@@ -7,6 +7,7 @@ import { addDoc,collection } from "firebase/firestore";
 import {db} from "../auth/auth";
 
 import './styles/individualproductpage.css';
+import Product from "../components/product";
 
 async function AddToCart(data) {
   try {
@@ -25,7 +26,8 @@ async function AddToCart(data) {
 function IndividualProductPage() {
   const location = useLocation();
   const product  = location.state;
-  const { artistID, image, prodName, prodDesc, prodPrice } = product;
+  console.log(product);
+  const { id, artistID, image, prodName, prodDesc, prodPrice } = product;
 
   return (
     <div className="individual-product-container">
@@ -45,7 +47,7 @@ function IndividualProductPage() {
           className="add-to-cart-button"
           onClick={() =>
             AddToCart({
-              productID: "D75j3ICY58TkCqm8KEKL",
+              productID: id,
               userID: "njvYETeeSpAF5xIFwfnI",
               quantity: 2,
             })
