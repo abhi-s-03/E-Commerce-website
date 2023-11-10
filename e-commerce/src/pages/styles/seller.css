@@ -1,10 +1,10 @@
 .seller-dashboard {
   display: flex;
   flex-direction: column;
-  height: max-content
+  min-height: 100vh;
 }
 
-.seller-header{
+.seller-header {
   background-color: wheat;
 }
 
@@ -19,14 +19,14 @@
 
 .dashboard-content {
   display: flex;
-  height: 100%;
+  flex: 1;
 }
 
 .seller-dashboard .side-menu {
   width: 15vw;
   background-color: white;
   padding: 1rem;
-  height: 100vh;
+  height: 100%;
 }
 
 .side-menu ul {
@@ -50,14 +50,27 @@
 }
 
 .section-content {
+  flex: 1;
   padding: 2em;
   margin-bottom: 1rem;
 }
 
-/* Media query for smaller screens (e.g., mobile) */
 @media screen and (max-width: 768px) {
   .menu-icon img {
     width: 1.8em;
     height: 1.8em;
+  }
+
+  .seller-dashboard {
+    flex-direction: column-reverse;
+  }
+
+  .dashboard-content {
+    flex-direction: column;
+  }
+
+  .seller-dashboard .side-menu {
+    width: 100%;
+    padding: 1em;
   }
 }
