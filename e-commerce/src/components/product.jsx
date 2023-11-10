@@ -13,7 +13,7 @@ const Product = ({ heading, products,more }) => {
       <div className="products">
         {products.map((product, index) => (
           <div className="product" key={index}>
-            <Link to={product.link}>
+            <Link to={`/product/${product.id}`} state={product}>
               <img src={product.image} alt={product.title} />
             </Link>
           </div>
