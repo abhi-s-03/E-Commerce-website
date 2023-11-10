@@ -53,8 +53,18 @@ function Cart() {
   };
 
   const calculateShippingCharges = () => {
-    // Implement shipping charges calculation logic here
-    return 10;
+    const subtotal = calculateSubtotal();
+  
+    // Set the shipping rate percentages
+    const lowSubtotalRate = 0.03; // 3%
+    const highSubtotalRate = 0.02; // 2%
+  
+    // Calculate shipping charges based on the logic
+    if (subtotal < 1000) {
+      return subtotal * lowSubtotalRate;
+    } else {
+      return subtotal * highSubtotalRate;
+    }
   };
 
   const calculateFulltotal = () => {
