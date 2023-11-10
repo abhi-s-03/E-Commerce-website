@@ -1,28 +1,56 @@
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import "./styles/cart.css";
 import deleteimg from "../assets/delete-img.svg";
 import plussymbol from "../assets/plus-symbol.svg";
 import minussymbol from "../assets/minus-symbol.svg";
 import leftarrow from "../assets/leftarrow.svg";
 import { Link } from "react-router-dom";
+import {
+  collection,
+  getDocs,
+  where,
+  query, 
+  updateDoc,
+  doc,
+  deleteDoc,
+} from "firebase/firestore";
+import { db } from "../auth/auth";
 
 function Cart() {
-  const [cartItems, setCartItems] = useState([
-    {
-      id: 1,
-      name: "Product 1",
-      image: "item1.jpg",
-      price: 50,
-      quantity: 2,
-    },
-    {
-      id: 2,
-      name: "Product 2",
-      image: "item2.jpg",
-      price: 30,
-      quantity: 1,
-    },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
+  const [productMap, setProductMap] = useState({});
+  
+  useEffect(() => {
+    const loadProducts = async () => {
+      try {
+        const q1 = query(collection(db, "carts"), where("userID", "==", "Admin"));
+        const q2 = query(collection(db, "products"));
+        const productSnapshot = await getDocs(q2);
+        const cartSnapshot = await getDocs(q1);
+        
+        const cartArray = cartSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+
+        const productObject = {};
+        productSnapshot.docs.forEach((doc) => {
+          productObject[doc.id] = {
+            id: doc.id,
+            ...doc.data(),
+          };
+        });
+
+        setProductMap(productObject);
+        setCartItems(cartArray);
+      } catch (error) {
+        console.error("Error loading products:", error);
+      }
+    };
+
+    console.log("Fetched from DB");
+    loadProducts();
+  }, []);
 
   const removeItem = (itemId) => {
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
@@ -45,6 +73,8 @@ function Cart() {
     setCartItems(updatedCart);
   };
 
+ 
+
   const calculateSubtotal = () => {
     return cartItems.reduce(
       (total, item) => total + item.price * item.quantity,
@@ -52,15 +82,11 @@ function Cart() {
     );
   };
 
-  const calculateShippingCharges = () => {
-    // Implement shipping charges calculation logic here
-    return 10;
-  };
 
   const calculateFulltotal = () => {
     return (
       cartItems.reduce((total, item) => total + item.price * item.quantity, 0) +
-      calculateShippingCharges()
+      0
     );
   };
 
@@ -93,17 +119,17 @@ function Cart() {
                     src={deleteimg}
                   />
                 </button>
-
+                
                 <img
-                  className="cart-item1-item-image"
-                  src={item.image}
-                  alt={item.name}
-                />
+                className="cart-item1-item-image"
+                src={productMap[item.productID].image}
+                alt={"ss"}
+              />
 
-                <div className="cart-item1-item-name">{item.name}</div>
+                <div className="cart-item1-item-name">{productMap[item.productID].prodName}</div>
               </div>
 
-              <div className="cart-item-item-price">{item.price}</div>
+              <div className="cart-item-item-price">{productMap[item.productID].prodPrice}</div>
 
               <div className="cart-item-quantity">
                 <div className="quantity-button2">
@@ -131,7 +157,7 @@ function Cart() {
                 </div>
               </div>
               <div className="cart-item-item-subtotal">
-                ₹{item.price * item.quantity}.00
+                ₹{productMap[item.productID].prodPrice * item.quantity}.00
               </div>
             </div>
           ))}
@@ -164,7 +190,7 @@ function Cart() {
             </div>
             <div className="sub-total-child">
               <div className="subtotal-label">Shipping</div>
-              <div className="subtotal">₹{calculateShippingCharges()}.00</div>
+              <div className="subtotal">₹0.00</div>
             </div>
           </div>
           <div className="total-child" />
