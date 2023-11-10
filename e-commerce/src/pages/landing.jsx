@@ -30,7 +30,7 @@ import handicraft5 from "../assets/handicraft5.jpeg";
 import "./styles/landing.css";
 
 import { useState, useEffect } from 'react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs, query } from 'firebase/firestore';
 import { db } from '../auth/auth';
 
 
