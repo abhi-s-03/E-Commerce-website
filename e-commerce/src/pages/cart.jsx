@@ -83,6 +83,7 @@ function Cart() {
   };
 
 
+
   const calculateFulltotal = () => {
     return (
       cartItems.reduce((total, item) => total + item.price * item.quantity, 0) +
