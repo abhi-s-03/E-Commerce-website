@@ -20,7 +20,7 @@ const Navbar = () => {
       <div className="topbar-right">
         <ul className="topbar-links">
           <li>
-            <Link to="/individual">Seller</Link>
+            <Link to="/seller">Seller</Link>
           </li>
           <li>
             <Link to="/login">Sign In</Link>
