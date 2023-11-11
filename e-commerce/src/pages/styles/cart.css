@@ -62,24 +62,20 @@ body {
   align-items: center;
   justify-content: center;
   padding: 1rem;
-  width: 100%;
+  width: 80%;
   margin: 1rem;
+  background-color: white;
 }
 
 .cart-container-cart-total {
   border: 2px solid #e4e7e9;
   font-size: 1.13rem;
-  top: 20.75rem;
   border-radius: 4px;
   background-color: #fff;
   overflow: hidden;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
+  padding: 2rem;
   width: 50%;
   margin: 1rem;
-  max-width: 30rem;
 }
 
 .Product-list-heading {
@@ -294,7 +290,7 @@ body {
 }
 
 .sub-total-child {
-  width: 15.5rem;
+  width: 36.5rem;
   align-items: center;
   justify-content: space-between;
 }
