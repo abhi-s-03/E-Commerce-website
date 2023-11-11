@@ -6,8 +6,8 @@ const Navbar = () => {
   return (
     <div className="topbar">
       <div className="logo">
-        <Link to="/" className="logo">
-          <img src={logo} alt="ArtMart" />
+        <Link to="/" className="logo-link">
+          <img src={logo} alt="ArtMart" className="logo-img" />
         </Link>
       </div>
       <div className="search-bar">
@@ -20,13 +20,16 @@ const Navbar = () => {
       <div className="topbar-right">
         <ul className="topbar-links">
           <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
             <Link to="/seller">Seller</Link>
           </li>
           <li>
             <Link to="/login">Sign In</Link>
           </li>
           <li>
-            <Link to="/Cart">Cart</Link>
+            <Link to="/cart">Cart</Link>
           </li>
         </ul>
       </div>

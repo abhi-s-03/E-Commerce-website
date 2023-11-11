@@ -2,27 +2,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1rem 1rem 2rem;
+  padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.topbar .logo {
-  flex: 1;
+.logo {
+  width:15%;
 }
 
-.topbar .logo img {
-  max-width: 50%;
+.logo-img {
+  max-width: 80%;
   height: auto;
 }
 
-.topbar .search-bar {
+.search-bar {
   flex: 2;
   display: flex;
   align-items: center;
 }
 
-.topbar [type="text"] {
+.topbar input[type="text"] {
   width: 100%;
   padding: 0.7rem;
   border: 1px solid #ccc;
@@ -55,7 +55,7 @@
 }
 
 .topbar-links li {
-  margin-right: 3rem;
+  margin-right: 2rem;
 }
 
 a {
@@ -70,8 +70,14 @@ a {
     align-items: center;
   }
 
-  .topbar .logo {
+  .logo {
     margin-bottom: 1rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .logo-img {
+    width: 100%;
   }
 
   .search-bar {
@@ -79,7 +85,14 @@ a {
     margin-top: 1rem;
   }
 
-  button[type="submit"] {
+  .topbar input[type="text"]{
+    width: 100%;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .topbar button[type="submit"] {
+    margin: 0;
     margin-top: 1rem;
   }
 
