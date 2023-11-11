@@ -6,7 +6,7 @@ import minussymbol from "../assets/minus-symbol.svg";
 import { Link } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db } from "../auth/auth";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
