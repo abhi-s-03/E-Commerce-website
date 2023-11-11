@@ -11,7 +11,7 @@ import Footer from "../components/footer";
 
 const Seller = () => {
   const [activeSection, setActiveSection] = useState("artworkManagement");
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(true);
 
   const handleSectionChange = (section) => {
     setActiveSection(section);
