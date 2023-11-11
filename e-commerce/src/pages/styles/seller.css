@@ -55,6 +55,12 @@
   margin-bottom: 1rem;
 }
 
+@media screen and (width > 768px) {
+    .seller-header{
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
   .menu-icon img {
     width: 1.8em;
