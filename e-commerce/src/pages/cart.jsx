@@ -3,46 +3,48 @@ import "./styles/cart.css";
 import deleteimg from "../assets/delete-img.svg";
 import plussymbol from "../assets/plus-symbol.svg";
 import minussymbol from "../assets/minus-symbol.svg";
-import { Link } from "react-router-dom";
-import { collection, getDocs, where, query } from "firebase/firestore";
+import { Link, useNavigate } from "react-router-dom";
+import { collection, getDocs, where, query, doc, updateDoc } from "firebase/firestore";
 import { db } from "../auth/auth";
 import Navbar from "../components/navbar";
 
 function Cart() {
   const [cartItems, setCartItems] = useState([]);
   const [productMap, setProductMap] = useState({});
+  const navigate = useNavigate();
 
-  useEffect(() => {
-    const loadProducts = async () => {
-      try {
-        const q1 = query(
-          collection(db, "carts"),
-          where("userID", "==", "Admin")
-        );
-        const q2 = query(collection(db, "products"));
-        const productSnapshot = await getDocs(q2);
-        const cartSnapshot = await getDocs(q1);
+  const loadProducts = async () => {
+    try {
+      const q1 = query(
+        collection(db, "carts"),
+        where("userID", "==", "njvYETeeSpAF5xIFwfnI") //set userID here
+      );
+      const q2 = query(collection(db, "products"));
+      const productSnapshot = await getDocs(q2);
+      const cartSnapshot = await getDocs(q1);
 
-        const cartArray = cartSnapshot.docs.map((doc) => ({
+      const cartArray = cartSnapshot.docs.map((doc) => ({
+        id: doc.id,
+        ...doc.data(),
+      }));
+      console.log(cartArray);
+
+      const productObject = {};
+      productSnapshot.docs.forEach((doc) => {
+        productObject[doc.id] = {
           id: doc.id,
           ...doc.data(),
-        }));
+        };
+      });
 
-        const productObject = {};
-        productSnapshot.docs.forEach((doc) => {
-          productObject[doc.id] = {
-            id: doc.id,
-            ...doc.data(),
-          };
-        });
+      setProductMap(productObject);
+      setCartItems(cartArray);
+    } catch (error) {
+      console.error("Error loading products:", error);
+    }
+  };
 
-        setProductMap(productObject);
-        setCartItems(cartArray);
-      } catch (error) {
-        console.error("Error loading products:", error);
-      }
-    };
-
+  useEffect(() => {
     console.log("Fetched from DB");
     loadProducts();
   }, []);
@@ -80,6 +82,21 @@ function Cart() {
       cartItems.reduce((total, item) => total + item.price * item.quantity, 0) +
       0
     );
+  };
+
+  const handleCheckout = async () => {
+    // Update the "carts" collection with the modified cartItems
+    try {
+      for (const cartItem of cartItems) {
+        const cartDocRef = doc(db, "carts", cartItem.id);
+        await updateDoc(cartDocRef, {
+          quantity: cartItem.quantity,
+        });
+      }
+      navigate("/checkoutform");
+    } catch (error) {
+      console.error("Error updating cart:", error);
+    }
   };
 
   return (
@@ -181,7 +198,7 @@ function Cart() {
               <div className="total-cost">₹{calculateFulltotal()}.00</div>
             </div>
           </div>
-          <button className="checkout-button">
+          <button className="checkout-button" onClick={handleCheckout}>
             <Link to="/checkoutform">
               <b className="checkout-button-text">Proceed to Checkout </b>
             </Link>
