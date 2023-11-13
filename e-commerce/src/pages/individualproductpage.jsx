@@ -49,7 +49,7 @@ function IndividualProductPage() {
             AddToCart({
               productID: id,
               userID: "njvYETeeSpAF5xIFwfnI",
-              quantity: 2,
+              quantity: 1,
             })
           }
         >
