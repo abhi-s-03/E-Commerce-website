@@ -4,7 +4,7 @@ import deleteimg from "../assets/delete-img.svg";
 import plussymbol from "../assets/plus-symbol.svg";
 import minussymbol from "../assets/minus-symbol.svg";
 import { Link, useNavigate } from "react-router-dom";
-import { collection, getDocs, where, query, doc, updateDoc } from "firebase/firestore";
+import { collection, getDocs, where, query, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import { db } from "../auth/auth";
 import Navbar from "../components/navbar";
 
@@ -49,7 +49,9 @@ function Cart() {
     loadProducts();
   }, []);
 
-  const removeItem = (itemId) => {
+  const removeItem = async (itemId) => {
+    const cartDocRef = doc(db, "carts", itemId);
+      await deleteDoc(cartDocRef);
     const updatedCart = cartItems.filter((item) => item.id !== itemId);
     setCartItems(updatedCart);
   };
