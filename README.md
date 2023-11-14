@@ -15,8 +15,11 @@ Team id:topdevs
 2. Embed video of project demo
 ## Libraries used
 1.FontAwesome == 6.4.2
-2.Firebase" == 10.5.2
+
+2.Firebase == 10.5.2
+
 3.Multi-range-slider-react == 2.0.5
+
 ## How to configure
 1.Clone the repository
 ``````
