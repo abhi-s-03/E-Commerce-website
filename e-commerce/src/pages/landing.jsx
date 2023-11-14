@@ -9,10 +9,12 @@ import { db } from '../auth/auth';
 
 const Landing = () => {
   const [products, setProducts] = useState([]);
-
+  const [loggedIn, setLoggedIn] = useState(false);
   useEffect(() => {
     const storedUserId = localStorage.getItem("userId");
-
+    if (storedUserId !== null) {
+      setLoggedIn(true);
+    }
     console.log("LOCALSTORAGE",storedUserId);
     const fetchProducts = async () => {
       try {
@@ -41,7 +43,7 @@ const Landing = () => {
 
   return (
     <div className="landing">
-      <Navbar />
+      <Navbar loggedIn={loggedIn}/>
       <Offers />
       <Product heading="Paintings" products={painting} more="/paintings"/>
       <Product heading="Sculptures" products={sculpture} more="/sculptures" />
