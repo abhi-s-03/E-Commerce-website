@@ -28,13 +28,22 @@ function LoginForm() {
 
     try {
       const key = await signInWithEmailAndPassword(auth, email, password);
-      const q1 = query(
-        collection(db, "users"),
-        where("uid", "==", key['_tokenResponse']['localId']) //set userID here
-      );
-      
-      const userName = await getDocs(q1);
-      console.log(q1)
+
+const q1 = query(
+  collection(db, "users"),
+  where("uid", "==", key["_tokenResponse"]["localId"])
+);
+
+const userName = await getDocs(q1);
+
+userName.docs.forEach((doc) => {
+  const documentId = doc.id;
+  
+  localStorage.setItem("userId", documentId);
+  //const storedUserId = localStorage.getItem("userId");
+
+//console.log(storedUserId);
+});
       
 
       
