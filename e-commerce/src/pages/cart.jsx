@@ -73,17 +73,36 @@ function Cart() {
   };
 
   const calculateSubtotal = () => {
-    return cartItems.reduce(
-      (total, item) => total + item.price * item.quantity,
+    const subtotal = cartItems.reduce(
+      (total, item) => {
+        const itemPrice = productMap[item.productID]?.prodPrice || 0; // Default to 0 if prodPrice is undefined
+        return total + itemPrice * item.quantity;
+      },
       0
     );
+  
+    console.log("Subtotal:", subtotal);
+  
+    return subtotal;
+  };
+
+  const calculateShipping = () => {
+    // You can implement your shipping logic here
+    // For simplicity, let's assume free shipping if the subtotal is above a certain amount
+    const freeShippingThreshold = 1000; // Change this threshold as needed
+    return calculateSubtotal() >= freeShippingThreshold ? 0 : 50; // Change the shipping amount as needed
   };
 
   const calculateFulltotal = () => {
-    return (
-      cartItems.reduce((total, item) => total + item.price * item.quantity, 0) +
-      0
-    );
+    const fulltotal =
+      cartItems.reduce((total, item) => {
+        const itemPrice = productMap[item.productID]?.prodPrice || 0;
+        return total + itemPrice * item.quantity;
+      }, 0) + calculateShipping(); // Include the shipping charge here
+  
+    console.log("Fulltotal:", fulltotal);
+  
+    return fulltotal;
   };
 
   const handleCheckout = async () => {
@@ -191,7 +210,7 @@ function Cart() {
               </div>
               <div className="sub-total-child">
                 <div className="subtotal-label">Shipping</div>
-                <div className="subtotal">₹0.00</div>
+                <div className="subtotal">₹{calculateShipping()}.00</div>
               </div>
             </div>
             <div className="total-child" />
