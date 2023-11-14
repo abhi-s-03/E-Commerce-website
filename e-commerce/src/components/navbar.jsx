@@ -42,6 +42,7 @@ const Navbar = ({ loggedIn }) => {
   const navigate = useNavigate();
   const signout = () => {
     auth.signOut();
+    localStorage.removeItem("userId");
     navigate("/login");
   };
 
