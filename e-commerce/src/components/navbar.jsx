@@ -4,6 +4,8 @@ import "./styles/navbar.css";
 import { useEffect, useState } from "react";
 import { db } from '../auth/auth';
 import { doc, getDoc } from 'firebase/firestore';
+import auth  from '../auth/auth';
+import { useNavigate } from 'react-router-dom'
 const Navbar = ({ loggedIn }) => {
   const [username, setUsername] = useState(null);
   useEffect(() => {
@@ -37,6 +39,12 @@ const Navbar = ({ loggedIn }) => {
       setUsername(null);
     }
   }, [loggedIn]);
+  const navigate = useNavigate();
+  const signout = () => {
+    auth.signOut();
+    navigate("/login");
+  };
+
   return (
     <div className="topbar">
       <div className="logo">
@@ -62,6 +70,7 @@ const Navbar = ({ loggedIn }) => {
           <li>
           {loggedIn ? <p>{username}</p> : <Link to="/login">Sign In</Link>}
           </li>
+          {loggedIn && <li onClick={signout}>Logout</li> }
           <li>
             <Link to="/cart">Cart</Link>
           </li>
