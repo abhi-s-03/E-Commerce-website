@@ -1,8 +1,42 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/logo.jpg";
 import "./styles/navbar.css";
+import { useEffect, useState } from "react";
+import { db } from '../auth/auth';
+import { doc, getDoc } from 'firebase/firestore';
+const Navbar = ({ loggedIn }) => {
+  const [username, setUsername] = useState(null);
+  useEffect(() => {
+    const fetchUsernameFromDatabase = async () => {
+      try {
+        // Assuming you have a reference to the user document in Firestore
+        const storedUserId = localStorage.getItem("userId");
+        const userDocRef = doc(db, 'users', storedUserId); // Replace with the actual path or document ID
 
-const Navbar = () => {
+        // Get the user document
+        const userDocSnapshot = await getDoc(userDocRef);
+
+        if (userDocSnapshot.exists()) {
+          // Assuming the user document has a 'username' field
+          const fetchedUsername = userDocSnapshot.data().name;
+
+          // Set the username state variable
+          setUsername(fetchedUsername);
+        } else {
+          // Handle the case where the user document doesn't exist
+          console.error('User document does not exist');
+        }
+      } catch (error) {
+        console.error('Error fetching username:', error);
+      }
+    };
+
+    if (loggedIn) {
+      fetchUsernameFromDatabase();
+    } else {
+      setUsername(null);
+    }
+  }, [loggedIn]);
   return (
     <div className="topbar">
       <div className="logo">
@@ -26,7 +60,7 @@ const Navbar = () => {
             <Link to="/seller">Seller</Link>
           </li>
           <li>
-            <Link to="/login">Sign In</Link>
+          {loggedIn ? <p>{username}</p> : <Link to="/login">Sign In</Link>}
           </li>
           <li>
             <Link to="/cart">Cart</Link>
