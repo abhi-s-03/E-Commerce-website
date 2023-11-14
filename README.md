@@ -48,9 +48,9 @@ Discover, engage, and be inspired at Art Mart – where art finds its home.
 ## Team Id
 Team id:topdevs
 ## Link to product walkthrough
-https://drive.google.com/file/d/12l6yve2hLLfrmX_hfB80yAHf4eZSF3Pm/view?usp=sharing
+#### Buyer: https://drive.google.com/file/d/12l6yve2hLLfrmX_hfB80yAHf4eZSF3Pm/view?usp=sharing
 
-https://drive.google.com/file/d/14Xd5cS9-ahIXTLT2HWTPm_gIycf-M1we/view?usp=sharing
+#### Seller: https://drive.google.com/file/d/14Xd5cS9-ahIXTLT2HWTPm_gIycf-M1we/view?usp=sharing
 ## How it Works?
 
 ### Project Overview
@@ -85,10 +85,6 @@ The Seller Dashboard also comprises sections for managing orders, viewing the se
 #### Contact and Footer
 Contact information and other details are provided in the footer section of the website for users to access additional information.
 
-### Video of project demo: 
-#### Buyer: https://drive.google.com/file/d/12l6yve2hLLfrmX_hfB80yAHf4eZSF3Pm/view?usp=sharing
-
-#### Seller: https://drive.google.com/file/d/14Xd5cS9-ahIXTLT2HWTPm_gIycf-M1we/view?usp=sharing
 ## Libraries used
 1.FontAwesome == 6.4.2
 
