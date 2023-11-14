@@ -1,5 +1,5 @@
 ![StackUp Banner](https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg)
-# Project Name
+# ArtMart
 Long Description about project. This project do that. This project is awesome...
 ## Team members
 1. Aaron Jacob [https://github.com/aaron-jacob]
@@ -34,5 +34,5 @@ git clone https://github.com/abhi-s-03/E-Commerce-website
 ## How to Run
 To start the app,run the following command:
 ``````
-npm run dev
+pnpm run dev
 ``````
