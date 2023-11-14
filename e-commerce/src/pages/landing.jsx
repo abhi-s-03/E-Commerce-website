@@ -11,6 +11,9 @@ const Landing = () => {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
+    const storedUserId = localStorage.getItem("userId");
+
+    console.log("LOCALSTORAGE",storedUserId);
     const fetchProducts = async () => {
       try {
         const q = query(collection(db, 'products'));
