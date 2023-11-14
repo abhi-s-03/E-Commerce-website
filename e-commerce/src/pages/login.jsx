@@ -1,6 +1,9 @@
 import { useState } from "react";
 import "./styles/login.css";
+
 import auth from "../auth/auth";
+import { collection, getDocs, where, query, doc, updateDoc, deleteDoc } from "firebase/firestore";
+import { db } from "../auth/auth";
 import {
   signInWithEmailAndPassword,
   signInWithPopup,
@@ -24,10 +27,21 @@ function LoginForm() {
     }
 
     try {
-      await signInWithEmailAndPassword(auth, email, password);
+      const key = await signInWithEmailAndPassword(auth, email, password);
+      const q1 = query(
+        collection(db, "users"),
+        where("uid", "==", key['_tokenResponse']['localId']) //set userID here
+      );
+      
+      const userName = await getDocs(q1);
+      console.log(q1)
+      
+
+      
       setError("");
       navigate("/");
     } catch (error) {
+      console.log(error);
       setError("An error occurred! Please check your credentials");
     }
   };
@@ -36,7 +50,8 @@ function LoginForm() {
     e.preventDefault();
     try {
       const provider = new GoogleAuthProvider();
-      await signInWithPopup(auth, provider);
+      const key = await signInWithPopup(auth, provider);
+      console.log(key);
       setError("");
       navigate("/");
     } catch (error) {
