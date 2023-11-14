@@ -14,8 +14,22 @@ Team id:topdevs
 1. Explaining the working of project
 2. Embed video of project demo
 ## Libraries used
-Library Name - Version
+1.FontAwesome == 6.4.2
+2.Firebase" == 10.5.2
+3.Multi-range-slider-react == 2.0.5
 ## How to configure
-Instructions for setting up project
+1.Clone the repository
+``````
+git clone https://github.com/abhi-s-03/E-Commerce-website
+``````
+2.Make sure you have the latest versions of Node.js, pnpm installed on your machine.
+
+3.Run following command in the current directory where you clone this repo
+ ``````
+ pnpm install
+ ``````
 ## How to Run
-Instructions for running
+To start the app,run the following command:
+``````
+npm run dev
+``````
