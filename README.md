@@ -1,9 +1,13 @@
 ![StackUp Banner](https://tinkerhub.frappe.cloud/files/stackup%20banner.jpeg)
-# ArtMart
-# Art Mart - Empowering Art Commerce
-
+# ArtMart - Empowering Art Commerce
 Welcome to Art Mart, a vibrant e-commerce platform that celebrates the world of art. Art Mart serves as a dynamic marketplace where users can seamlessly buy and sell a diverse range of art products online. To engage with the full spectrum of features, users are invited to log in and embark on a journey through the realm of creativity.
+Art Mart is not just an e-commerce platform; it's a celebration of creativity and artistic expression. Our platform is designed to bridge the gap between art lovers and talented creators, fostering a community that appreciates and supports the arts.
 
+Art Mart's user-centric design ensures a seamless and enjoyable experience for buyers, with robust features like intuitive search, detailed product pages, and a streamlined checkout process. For sellers, the Seller Dashboard provides powerful tools for managing and showcasing their creations, coupled with insights into their earnings and order fulfillment.
+
+With a commitment to security, transparency, and user satisfaction, Art Mart aims to redefine the online art market. Join us on this artistic journey, where every click brings you closer to the beauty of human creativity.
+
+Discover, engage, and be inspired at Art Mart – where art finds its home.
 ## Key Features
 
 ### 1. User Authentication
@@ -29,16 +33,6 @@ For artists and sellers, Art Mart offers a dedicated Seller Dashboard. Manage yo
 
 ### 8. Informative Footer
 The footer section acts as a gateway to additional information, including contact details. Art Mart is committed to providing a transparent and accessible platform for all users.
-
-## Project Description
-
-Art Mart is not just an e-commerce platform; it's a celebration of creativity and artistic expression. Our platform is designed to bridge the gap between art lovers and talented creators, fostering a community that appreciates and supports the arts.
-
-Art Mart's user-centric design ensures a seamless and enjoyable experience for buyers, with robust features like intuitive search, detailed product pages, and a streamlined checkout process. For sellers, the Seller Dashboard provides powerful tools for managing and showcasing their creations, coupled with insights into their earnings and order fulfillment.
-
-With a commitment to security, transparency, and user satisfaction, Art Mart aims to redefine the online art market. Join us on this artistic journey, where every click brings you closer to the beauty of human creativity.
-
-Discover, engage, and be inspired at Art Mart – where art finds its home.
 
 ## Team members
 1. Aaron Jacob [https://github.com/aaron-jacob]
